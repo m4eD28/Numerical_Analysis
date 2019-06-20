@@ -67,7 +67,7 @@ int main() {
   cout << "relation_error = " << relation_error << endl;
 
   vector<double> delta_b(5, 0);
-  delta_b.at(4) = 0.001*b_3.at(4);
+  delta_b.at(4) = 0.001*b_test.at(4);
   double setudou = VectorNormInfty(delta_b)/VectorNormInfty(b_test);
   cout << "setudou = " << setudou << endl;
 
