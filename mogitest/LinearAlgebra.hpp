@@ -165,35 +165,62 @@ std::vector<std::vector<double>> Forward_erase(const std::vector<std::vector<dou
   return A;
 }
 
+/* std::vector<double> Backward_sub(const std::vector<std::vector<double>>& _A,const std::vector<double>& _b) { */
+/*   std::vector<std::vector<double>> A(_A); */
+/*   std::vector<double> b(_b); */
+/*   std::vector<double> x(A.size()); */
+/*   double sum = 0; */
+/*   for (int k = A.size()-1; k >= 0; k--) { */
+/*     sum = 0; */
+/*     for (int j = k+1; j < A.size(); j++) { */
+/*       sum += A.at(k).at(j) * x.at(j); */
+/*       /1* sum += A.at(k).at(j) * x.at(j) / A.at(k).at(k); *1/ */
+/*     } */
+/*     x.at(k) = (b.at(k) - sum) / A.at(k).at(k); */
+/*     /1* x.at(k) = b.at(k) / A.at(k).at(k) - sum; *1/ */
+/*   } */
+
+/*   return x; */
+/* } */
+
 std::vector<double> Backward_sub(const std::vector<std::vector<double>>& _A,const std::vector<double>& _b) {
   std::vector<std::vector<double>> A(_A);
   std::vector<double> b(_b);
   std::vector<double> x(A.size());
-  double sum = 0;
   for (int k = A.size()-1; k >= 0; k--) {
-    sum = 0;
     for (int j = k+1; j < A.size(); j++) {
-      sum += A.at(k).at(j) * x.at(j);
-      /* sum += A.at(k).at(j) * x.at(j) / A.at(k).at(k); */
+      b.at(k) -= A.at(k).at(j) * x.at(j);
     }
-    x.at(k) = (b.at(k) - sum) / A.at(k).at(k);
-    /* x.at(k) = b.at(k) / A.at(k).at(k) - sum; */
+    x.at(k) = b.at(k) / A.at(k).at(k);
   }
 
   return x;
 }
 
+/* std::vector<double> Forward_sub(const std::vector<std::vector<double>>& _A,const std::vector<double>& _b) { */
+/*   std::vector<std::vector<double>> A(_A); */
+/*   std::vector<double> b(_b); */
+/*   std::vector<double> y(A.size()); */
+/*   double sum; */
+/*   for (int k = 0; k < b.size(); k++) { */
+/*     sum = 0; */
+/*     for (int j = 0; j < k; j++) { */
+/*       sum += A.at(k).at(j) * y.at(j); */
+/*     } */
+/*     y.at(k) = b.at(k) - sum; */
+/*   } */
+
+/*   return y; */
+/* } */
+
 std::vector<double> Forward_sub(const std::vector<std::vector<double>>& _A,const std::vector<double>& _b) {
   std::vector<std::vector<double>> A(_A);
   std::vector<double> b(_b);
-  std::vector<double> y(A.size());
-  double sum;
+  std::vector<double> y(b);
   for (int k = 0; k < b.size(); k++) {
-    sum = 0;
     for (int j = 0; j < k; j++) {
-      sum += A.at(k).at(j) * y.at(j);
+      y.at(k) -= A.at(k).at(j) * y.at(j);
     }
-    y.at(k) = b.at(k) - sum;
   }
 
   return y;
