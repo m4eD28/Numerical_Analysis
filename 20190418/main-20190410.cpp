@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include<vector>
-#include<math.h>
+#include<cmath>
 
 using namespace::std;
 
@@ -26,16 +26,16 @@ int main(int argc, const char * argv[]) {
     int aa = 12345;
     double bb = 12345.6789;
     printf("%8d, %9.3f, %.10e\n", aa, bb, bb);
-    
+
     cout<<"sin(aa)="<<sin(aa)<<endl;
-    
-    
+
+
     int x = 3, m = 6, n = 7;
     double y = sin(M_PI/2);
     cout<<"x+y="<<exp(x)+y<<endl;
     cout<<"m/n="<<m/n<<endl;
     printf("%7d, %9.3f, %.15e\n",12345,12345.6789,12345.6789);
-    
+
     double d[3] = {1,11,111};
     double B[3][2]={
         {1,2},
@@ -60,7 +60,7 @@ int main(int argc, const char * argv[]) {
         cout<<"pd[i]="<<pd[i]<<endl;
     }
     delete[] pd;
-    
+
     vector<double> b(n,log(1000));
     cout<<"b = \n";
     for(int i=0;i<b.size();i++){
@@ -73,7 +73,7 @@ int main(int argc, const char * argv[]) {
     for(int i=0;i<b.size();i++){
         printf("b[%d] = %.3e\n",i,b[i]);
     }
-    
+
     vector<double> a(5), c(5);
     vector<vector<double>> A(5,vector<double>(3));
     for(int i=0;i<A.size();i++){
@@ -91,7 +91,7 @@ int main(int argc, const char * argv[]) {
         printf("\n");
     }
     cout<<"sum(a)="<<sum(a)<<", sum(c)="<<sum(c)<<endl;
-    
+
     return 0;
 }
 

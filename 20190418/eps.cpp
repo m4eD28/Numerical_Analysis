@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 
 int main(void){
   double eps = 1.0;
