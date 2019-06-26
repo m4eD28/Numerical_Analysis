@@ -273,7 +273,7 @@ void Jacobi_law(const vector<vector<double>>& A, const vector<double>& b) {
       /* x.at(m).at(i) = b.at(i)/A.at(i).at(i) - sum ; */
       x.at(m).at(i) = (b.at(i) - sum) / A.at(i).at(i);
     }
-    if ((VectorNorm1(VectorSubstract(x.at(m), x.at(m-1)))/VectorNorm1(x.at(m-1))) <= eps) {
+    if ((VectorNormInfty(VectorSubstract(x.at(m), x.at(m-1)))/VectorNormInfty(x.at(m-1))) <= eps) {
       cout << "x = " << endl;
       printVector(x.at(m));
       cout << "m = " << m << endl;
@@ -281,34 +281,6 @@ void Jacobi_law(const vector<vector<double>>& A, const vector<double>& b) {
     }
   }
   cout << "収束しない" << endl;
-  /* for (int i = 0; i < A.size(); i++) { */
-  /*   x.at(0).at(i) = 1.0; */
-  /* } */
-  /* vector<double> x_before(A.size(), 1); */
-  /* vector<double> x_after(A.size()); */
-  /* for (int m = 1; m <= M; m++) { */
-  /*   for (int i = 0; i < A.size(); i++) { */
-  /*     sum = 0; */
-  /*     for (int j = 0; j < A.size(); j++) { */
-  /*       sum += A.at(i).at(j) * x_before.at(j); */
-  /*     } */
-  /*     x_after.at(i) = (b.at(i) - sum); */
-  /*   } */
-  /*   if ((VectorNormInfty(VectorSubstract(x_before, x_after))/VectorNormInfty(x_after)) <= eps) { */
-  /*     cout << "x = " << endl; */
-  /*     printVector(x_after); */
-  /*     cout << "m = " << m << endl; */
-  /*     break; */
-  /*   } */
-  /*   x_before = x_after; */
-  /* } */
-
-  /* cout << "A = " << endl; */
-  /* printMatrix(A); */
-  /* cout << "b = " << endl; */
-  /* printVector(b); */
-  /* cout << "x = " << endl; */
-  /* printVector_more_detail(x.at()); */
 }
 
 void Gauss_Seidel_law(const vector<vector<double>>& _A, const vector<double>& _b) {
@@ -322,7 +294,7 @@ void Gauss_Seidel_law(const vector<vector<double>>& _A, const vector<double>& _b
   for (int m = 1; m < M; m++) {
     for (int i = 0; i < A.size(); i++) {
       sum1 = 0;
-      for (int j = 0; j < i-1; j++) {
+      for (int j = 0; j < i; j++) {
         sum1 += A.at(i).at(j) * x.at(m).at(j);
       }
       sum2 = 0;
@@ -331,7 +303,7 @@ void Gauss_Seidel_law(const vector<vector<double>>& _A, const vector<double>& _b
       }
       x.at(m).at(i) = (b.at(i) - sum1 - sum2)/A.at(i).at(i);
     }
-    if ((VectorNorm1(VectorSubstract(x.at(m-1), x.at(m)))/VectorNorm1(x.at(m))) <= eps) {
+    if ((VectorNormInfty(VectorSubstract(x.at(m-1), x.at(m)))/VectorNormInfty(x.at(m))) <= eps) {
       cout << "x = " << endl;
       printVector(x.at(m));
       cout << "m = " << m << endl;

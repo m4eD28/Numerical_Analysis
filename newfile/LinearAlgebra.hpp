@@ -16,7 +16,7 @@ void printVector(const vector<double>& a) {
 
 void printVector_more_detail(const vector<double>& a) {
   for (int i = 0; i < a.size(); i++) {
-    printf("|%.10e|\n",a[i]);
+    printf("|%.12e|\n",a[i]);
   }
   cout << endl;
 }
@@ -217,7 +217,7 @@ void Gauss_elimination(const vector<vector<double>>& _A, const vector<double>& _
   cout << "b = " << endl;
   printVector(b);
   cout << "x = " << endl;
-  printVector(x);
+  printVector_more_detail(x);
 }
 
 vector<vector<double>> LU_decomposition(const vector<vector<double>>& _A) {
@@ -257,4 +257,59 @@ vector<vector<double>> Inverse_matrix(const vector<vector<double>>& A) {
   return A_Inverse;
 }
 
+void Jacobi_law(const vector<vector<double>>& A, const vector<double>& b) {
+  int M = 200;
+  double eps = 1e-8;
+  vector<vector<double>> x(M, vector<double>(A.size(), 1.0));
+  double sum;
+  for (int m = 1; m < M; m++) {
+    for (int i = 0; i < A.size(); i++) {
+      sum = 0;
+      for (int j = 0; j < A.at(0).size(); j++) {
+        if (j == i) continue;
+        /* sum += A.at(i).at(j) * x.at(m-1).at(j) / A.at(i).at(i); */
+        sum += A.at(i).at(j) * x.at(m-1).at(j);
+      }
+      /* x.at(m).at(i) = b.at(i)/A.at(i).at(i) - sum ; */
+      x.at(m).at(i) = (b.at(i) - sum) / A.at(i).at(i);
+    }
+    if ((VectorNormInfty(VectorSubstract(x.at(m), x.at(m-1)))/VectorNormInfty(x.at(m-1))) <= eps) {
+      cout << "x = " << endl;
+      printVector(x.at(m));
+      cout << "m = " << m << endl;
+      return;
+    }
+  }
+  cout << "収束しない" << endl;
+}
+
+void Gauss_Seidel_law(const vector<vector<double>>& _A, const vector<double>& _b) {
+  vector<vector<double>> A(_A);
+  vector<double> b(_b);
+  int M = 200;
+  double eps = 1e-8;
+  vector<vector<double>> x(M, vector<double>(A.size(), 1.0));
+  double sum1;
+  double sum2;
+  for (int m = 1; m < M; m++) {
+    for (int i = 0; i < A.size(); i++) {
+      sum1 = 0;
+      for (int j = 0; j < i; j++) {
+        sum1 += A.at(i).at(j) * x.at(m).at(j);
+      }
+      sum2 = 0;
+      for (int j = i+1; j < A.size(); j++) {
+        sum2 += A.at(i).at(j) * x.at(m-1).at(j);
+      }
+      x.at(m).at(i) = (b.at(i) - sum1 - sum2)/A.at(i).at(i);
+    }
+    if ((VectorNormInfty(VectorSubstract(x.at(m-1), x.at(m)))/VectorNormInfty(x.at(m))) <= eps) {
+      cout << "x = " << endl;
+      printVector(x.at(m));
+      cout << "m = " << m << endl;
+      return;
+    }
+  }
+  cout << "収束しない" << endl;
+}
 #endif
