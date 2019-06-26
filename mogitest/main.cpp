@@ -45,7 +45,7 @@ int main() {
   /*   } */
   /* } */
 
-  Jacobi_law(28.0);
+  Jacobi_law(5.0);
 
 
 

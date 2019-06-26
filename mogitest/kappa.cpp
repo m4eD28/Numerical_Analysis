@@ -81,7 +81,9 @@ int main() {
   double x_tilde_x = VectorNormInfty(VectorSubstract(x_tilde, x));
   printf("|x* - x|_inf = %.2e\n", x_tilde_x);
   std::cout << "----------\n\n";
-
+/* 解の誤差と右辺項の摂動は次の関係式が成り立つ. */
+/* ∥x − x ̃∥∞ ≤ κ∞(A)∥Ax ̃ − b∥∞ = κ∞(A)∥∆b∥∞ ∥x∥∞ ∥b∥∞ ∥b∥∞ */
+/* 右辺項に混入した誤差が微小であっても，解に含まれる誤差は条件数に応じて大きくなる 可能性があることが分かる.以上の結果より，実際の解の誤差ノルムはほぼ「条件数 × 右 辺項の摂動」になった. */
 
   return 0;
 }

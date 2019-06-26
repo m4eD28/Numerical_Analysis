@@ -17,10 +17,10 @@ double df(double x){
 
 const int Max = 60;
 int N = 0;
-double x0 = 30.0;
+double x0 = -30.0;
 double eps = 1e-7;
 double X[Max + 1];
-double alpha = 1.0;
+double alpha = -2.0;
 
 
 void Newton_zansa(){
