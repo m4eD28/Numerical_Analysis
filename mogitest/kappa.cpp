@@ -9,7 +9,6 @@ int main() {
       Hilbert.at(i-1).at(j-1) = 1/(i+j-1);
     }
   }
-
   // Hilbert
   std::cout << "Hilbert = \n";
   printMatrix(Hilbert);
