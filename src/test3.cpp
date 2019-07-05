@@ -1,11 +1,13 @@
 #include "LinearAlgebra.hpp"
+#include "Algo.hpp"
 #include <iostream>
+
 
 int main() {
   int n = 5;
-  std::vector<std::vector<double>> Hilbert(n, std::vector<double>(n));
-  std::vector<std::vector<double>> Marix_5(n, std::vector<double>(n));
-  std::vector<std::vector<double>> test(n, std::vector<double>(n));
+  std::vector<std::vector<double> > Hilbert(n, std::vector<double>(n));
+  std::vector<std::vector<double> > Marix_5(n, std::vector<double>(n));
+  std::vector<std::vector<double> > test(n, std::vector<double>(n));
   std::vector<double> b_1;
   std::vector<double> b_2;
   std::vector<double> b_3;
@@ -31,9 +33,9 @@ int main() {
     x_tilde.emplace_back(1);
   }
 
-  std::vector<std::vector<double>> test_Inverse;
+  std::vector<std::vector<double> > test_Inverse;
   test_Inverse = Inverse_matrix(test);
-  std::vector<std::vector<double>> solve = MatrixMatrix(test, test_Inverse);
+  std::vector<std::vector<double> > solve = MatrixMatrix(test, test_Inverse);
   printMatrix(solve);
 
   std::cout << "test = " << std::endl;
@@ -45,7 +47,7 @@ int main() {
   b_3.at(4) = b_3.at(4) + 0.001*b_3.at(4);
   printVector(b_3); //Hilbert*x_tilde
   std::cout << "------------------\n Forward_erase" << std::endl;
-  std::vector<std::vector<double>> test_forward = Forward_erase(test, b_3);
+  std::vector<std::vector<double> > test_forward = Forward_erase(test, b_3);
   printMatrix(test_forward);
   std::cout << "------------------\n Backward_sub" << std::endl;
   std::vector<double> x_3 = Backward_sub(test_forward, b_3);
@@ -80,7 +82,7 @@ int main() {
   /* std::vector<double> b_Hilbert(b_1); */
   /* printVector(b_1); //Hilbert*x_tilde */
   /* std::cout << "------------------\n Forward_erase" << std::endl; */
-  /* std::vector<std::vector<double>> Hilbert_Forward = Forward_erase(Hilbert, b_1); */
+  /* std::vector<std::vector<double> > Hilbert_Forward = Forward_erase(Hilbert, b_1); */
   /* printMatrix(Hilbert_Forward); */
   /* std::cout << "------------------\n Backward_sub" << std::endl; */
   /* std::vector<double> x_1 = Backward_sub(Hilbert_Forward, b_1); */
@@ -104,7 +106,7 @@ int main() {
   /* std::vector<double> b_Marix5(b_2); */
   /* printVector(b_2); //Marix_5*x_tilde */
   /* std::cout << "------------------\n Forward_erase" << std::endl; */
-  /* std::vector<std::vector<double>> Marix_5_Forward = Forward_erase(Marix_5, b_2); */
+  /* std::vector<std::vector<double> > Marix_5_Forward = Forward_erase(Marix_5, b_2); */
   /* printMatrix(Marix_5_Forward); */
   /* std::cout << "------------------\n Backward_sub" << std::endl; */
   /* std::vector<double> x_2 = Backward_sub(Marix_5_Forward, b_2); */
@@ -119,7 +121,7 @@ int main() {
   /* std::cout << "NormInf = " << VectorNormInfty(Marix_5_Error) << std::endl; */
 
   /* std::cout << "------------------\n Forward_erase" << std::endl; */
-  /* std::vector<std::vector<double>> Forward  = Forward_erase(A, b); */
+  /* std::vector<std::vector<double> > Forward  = Forward_erase(A, b); */
   /* printMatrix(Forward); */
   /* std::cout << "------------------\n Backward_sub" << std::endl; */
   /* std::vector<double> x_x = Backward_sub(Forward, b); */

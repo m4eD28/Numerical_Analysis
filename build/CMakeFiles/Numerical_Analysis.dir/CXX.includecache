@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/Algo.hpp
+iostream
+-
+vector
+-
+cmath
+-
+memory
+-
+LinearAlgebra.hpp
+../src/LinearAlgebra.hpp
+
+../src/LinearAlgebra.hpp
+iostream
+-
+vector
+-
+cmath
+-
+
+/Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp
+LinearAlgebra.hpp
+/Users/maedar/Desktop/TUS/Numerical_Analysis/LinearAlgebra.hpp
+Algo.hpp
+/Users/maedar/Desktop/TUS/Numerical_Analysis/Algo.hpp
+iostream
+-
+

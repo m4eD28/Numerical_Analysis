@@ -1,4 +1,5 @@
 #include "LinearAlgebra.hpp"
+#include "Algo.hpp"
 #include <iostream>
 
 int Jacobi_law(double a) {
@@ -7,7 +8,7 @@ int Jacobi_law(double a) {
   for (double i = 1; i <= n; i++) {
     for (double j = 1; j <= n; j++) {
       if(i == j) Hilbert.at(i-1).at(i-1) = a;
-      else if (0 < fabs(i-j) and fabs(i-j) < 4) 
+      else if (0 < fabs(i-j) and fabs(i-j) < 4)
         Hilbert.at(i-1).at(j-1) = 1 / (fabs(i*i - j*j + 15) + 1);
       else {
         Hilbert.at(i-1).at(j-1) = 0;
