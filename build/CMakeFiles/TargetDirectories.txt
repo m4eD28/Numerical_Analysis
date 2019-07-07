@@ -1,5 +1,0 @@
-/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles/rebuild_cache.dir
-/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles/edit_cache.dir
-/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles/Numerical_Analysis.dir
-/Users/maedar/Desktop/TUS/Numerical_Analysis/build/src/CMakeFiles/rebuild_cache.dir
-/Users/maedar/Desktop/TUS/Numerical_Analysis/build/src/CMakeFiles/edit_cache.dir

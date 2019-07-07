@@ -1,30 +1,29 @@
 #include<iostream>
-#include"src/matplotlibcpp.h"
-using namespace std;
+#include "src/matplotlibcpp.h"
+#include "src/Algo.hpp"
 
 namespace plt = matplotlibcpp;
 
 int main(){
-  cout<<"matplotlib-cpp sample start"<<endl;
+  std::cout<<"Plot start"<<std::endl;
 
-  int n = 5000;
-  vector<double> x(n), y(n);
-  // vector<double> x(1), y(1);
-  for(int i=0; i<n; ++i) {
-    x[i] = i;
-    y[i] = sin(2*M_PI*i/360.0);
-    // x[0]=i;
-    // y[0]=sin(2*M_PI*i/360.0);
-
-		// plt::plot(x, y, "xr");
-    // plt::pause(0.1);
+  double a = 3.0, T = 4.0, x0 = 1.0;
+  int N = 200;
+  double h = T/N, t = 0;
+  std::vector<double> xx(N), x_ex(N);
+  xx.at(0) = x0;
+  x_ex.at(0) = x0;
+  for(int i=0; i<N-1; ++i) {
+    xx.at(i+1) = xx.at(i) + h*a*xx.at(i);
+    t += h;
+    x_ex.at(i+1) = x0*pow(M_E, a*t);
   }
 
-  plt::plot(x, y, "r");
-	// plt::title("log");
-	// plt::xlabel("x");
-	// plt::ylabel("y");
-  // plt::axis("equal");
+  plt::plot(xx, "b");
+  plt::plot(x_ex, "r");
+	plt::title("Plot");
+	plt::xlabel("t");
+	plt::ylabel("x(t)");
   plt::show();
 
   return 0;
