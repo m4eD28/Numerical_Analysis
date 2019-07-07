@@ -9,9 +9,10 @@ set(CMAKE_CXX_FLAGS "-lstdc++ -lpython2.7")
 # set(PYTHON_EXECUTABLE)
 
 add_subdirectory(src)
+add_subdirectory(exe)
 
 # add_executable(a.out -lstdc++ -lpython2.7 -std=c++11 main2.cpp src/LinearAlgebra.cpp src/Algo.cpp )
-add_executable(Numerical_Analysis main2.cpp src/LinearAlgebra.cpp src/Algo.cpp)
+add_executable(Numerical_Analysis exe/main2.cpp src/LinearAlgebra.cpp src/Algo.cpp)
 
 # target_compile_options(Numerical_Analysis PUBLIC -lstdc++ -lpython2.7)
 target_link_libraries(Numerical_Analysis ${PYTHON_LIBRARIES})

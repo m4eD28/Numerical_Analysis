@@ -1,5 +1,5 @@
-#include "LinearAlgebra.hpp"
-#include "Algo.hpp"
+#include "../src/LinearAlgebra.hpp"
+#include "../src/Algo.hpp"
 #include <iostream>
 
 int Jacobi_law(double a) {

@@ -1,4 +1,5 @@
-#include "LinearAlgebra.hpp"
+#include "../src/LinearAlgebra.hpp"
+#include "../src/Algo.hpp"
 #include <iostream>
 
 int main() {

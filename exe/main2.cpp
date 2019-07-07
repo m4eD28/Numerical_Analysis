@@ -1,6 +1,6 @@
 #include<iostream>
-#include "src/matplotlibcpp.h"
-#include "src/Algo.hpp"
+#include "../src/matplotlibcpp.h"
+#include "../src/Algo.hpp"
 
 namespace plt = matplotlibcpp;
 
