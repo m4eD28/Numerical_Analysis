@@ -6,25 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp
-iostream
--
-src/matplotlibcpp.h
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
-
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
-vector
--
-map
--
-numeric
--
-stdexcept
--
-iostream
--
-functional
--
-python2.7/Python.h
--
-

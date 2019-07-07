@@ -20,7 +20,7 @@ void printVector_more_detail(const std::vector<double>& a) {
   std::cout << std::endl;
 }
 
-void printMatrix(const std::vector<std::vector<double>>& A) {
+void printMatrix(const std::vector<std::vector<double> >& A) {
   for (int i = 0; i < A.size(); i++) {
     std::cout << "|";
     for (int j = 0; j < A[0].size(); j++) {
@@ -44,7 +44,7 @@ std::vector<double> VectorSubstract(const std::vector<double>& a, const std::vec
   return c;
 }
 
-std::vector<double> MatrixVector(const std::vector<std::vector<double>>& A, const std::vector<double>& b) {
+std::vector<double> MatrixVector(const std::vector<std::vector<double> >& A, const std::vector<double>& b) {
   std::vector<double> c;
   double sum;
   for (int i = 0; i < A.size(); i++) {
@@ -58,8 +58,8 @@ std::vector<double> MatrixVector(const std::vector<std::vector<double>>& A, cons
   return c;
 }
 
-std::vector<std::vector<double>> MatrixMatrix(const std::vector<std::vector<double>>& A, const std::vector<std::vector<double>>& B) {
-  std::vector<std::vector<double>> C(A.size(), std::vector<double>(B.at(0).size()));
+std::vector<std::vector<double> > MatrixMatrix(const std::vector<std::vector<double> >& A, const std::vector<std::vector<double> >& B) {
+  std::vector<std::vector<double> > C(A.size(), std::vector<double>(B.at(0).size()));
 
   double sum;
   for (int i = 0; i < A.size(); i++) {
@@ -75,7 +75,7 @@ std::vector<std::vector<double>> MatrixMatrix(const std::vector<std::vector<doub
   return C;
 }
 
-std::vector<double> ResidualError(const std::vector<std::vector<double>>& A, const std::vector<double>& x, const std::vector<double>& b) {
+std::vector<double> ResidualError(const std::vector<std::vector<double> >& A, const std::vector<double>& x, const std::vector<double>& b) {
   std::vector<double> Ax;
   Ax = MatrixVector(A, x);
   std::vector<double> Ax_b;
@@ -108,7 +108,7 @@ double VectorNormInfty(const std::vector<double>& a) {
   return max;
 }
 
-double MatrixNorm1(const std::vector<std::vector<double>>& A) {
+double MatrixNorm1(const std::vector<std::vector<double> >& A) {
   double max = 0.0;
   double sum;
   for (int j = 0; j < A.at(0).size(); j++) {
@@ -121,7 +121,7 @@ double MatrixNorm1(const std::vector<std::vector<double>>& A) {
   return max;
 }
 
-double MatrixNormInfty(const std::vector<std::vector<double>>& A) {
+double MatrixNormInfty(const std::vector<std::vector<double> >& A) {
   double max = 0, sum;
   for (int i = 0; i < A.size(); i++) {
     sum = 0;

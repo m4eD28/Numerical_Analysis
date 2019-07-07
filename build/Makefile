@@ -123,32 +123,86 @@ Numerical_Analysis/fast:
 	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/build
 .PHONY : Numerical_Analysis/fast
 
-main2.o: main2.cpp.o
+main.o: main.cpp.o
 
-.PHONY : main2.o
+.PHONY : main.o
 
 # target to build an object file
-main2.cpp.o:
-	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.o
-.PHONY : main2.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main2.i: main2.cpp.i
+main.i: main.cpp.i
 
-.PHONY : main2.i
+.PHONY : main.i
 
 # target to preprocess a source file
-main2.cpp.i:
-	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.i
-.PHONY : main2.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main2.s: main2.cpp.s
+main.s: main.cpp.s
 
-.PHONY : main2.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-main2.cpp.s:
-	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.s
-.PHONY : main2.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+src/Algo.o: src/Algo.cpp.o
+
+.PHONY : src/Algo.o
+
+# target to build an object file
+src/Algo.cpp.o:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o
+.PHONY : src/Algo.cpp.o
+
+src/Algo.i: src/Algo.cpp.i
+
+.PHONY : src/Algo.i
+
+# target to preprocess a source file
+src/Algo.cpp.i:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.i
+.PHONY : src/Algo.cpp.i
+
+src/Algo.s: src/Algo.cpp.s
+
+.PHONY : src/Algo.s
+
+# target to generate assembly for a file
+src/Algo.cpp.s:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.s
+.PHONY : src/Algo.cpp.s
+
+src/LinearAlgebra.o: src/LinearAlgebra.cpp.o
+
+.PHONY : src/LinearAlgebra.o
+
+# target to build an object file
+src/LinearAlgebra.cpp.o:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o
+.PHONY : src/LinearAlgebra.cpp.o
+
+src/LinearAlgebra.i: src/LinearAlgebra.cpp.i
+
+.PHONY : src/LinearAlgebra.i
+
+# target to preprocess a source file
+src/LinearAlgebra.cpp.i:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.i
+.PHONY : src/LinearAlgebra.cpp.i
+
+src/LinearAlgebra.s: src/LinearAlgebra.cpp.s
+
+.PHONY : src/LinearAlgebra.s
+
+# target to generate assembly for a file
+src/LinearAlgebra.cpp.s:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.s
+.PHONY : src/LinearAlgebra.cpp.s
 
 # Help Target
 help:
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Numerical_Analysis"
-	@echo "... main2.o"
-	@echo "... main2.i"
-	@echo "... main2.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... src/Algo.o"
+	@echo "... src/Algo.i"
+	@echo "... src/Algo.s"
+	@echo "... src/LinearAlgebra.o"
+	@echo "... src/LinearAlgebra.i"
+	@echo "... src/LinearAlgebra.s"
 .PHONY : help
 
 

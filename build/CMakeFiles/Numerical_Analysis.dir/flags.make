@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/Frameworks/Python.framework/Versions/3.7/include/python3.7m 
+CXX_INCLUDES = -I/usr/local/Frameworks/Python.framework/Versions/3.7/include/python3.7m -I/Users/maedar/Desktop/TUS/Numerical_Analysis/src 
 

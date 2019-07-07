@@ -57,31 +57,61 @@ include CMakeFiles/Numerical_Analysis.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Numerical_Analysis.dir/flags.make
 
-CMakeFiles/Numerical_Analysis.dir/main2.cpp.o: CMakeFiles/Numerical_Analysis.dir/flags.make
-CMakeFiles/Numerical_Analysis.dir/main2.cpp.o: ../main2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Numerical_Analysis.dir/main2.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Numerical_Analysis.dir/main2.cpp.o -c /Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp
+CMakeFiles/Numerical_Analysis.dir/main.cpp.o: CMakeFiles/Numerical_Analysis.dir/flags.make
+CMakeFiles/Numerical_Analysis.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Numerical_Analysis.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Numerical_Analysis.dir/main.cpp.o -c /Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp
 
-CMakeFiles/Numerical_Analysis.dir/main2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Numerical_Analysis.dir/main2.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp > CMakeFiles/Numerical_Analysis.dir/main2.cpp.i
+CMakeFiles/Numerical_Analysis.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Numerical_Analysis.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp > CMakeFiles/Numerical_Analysis.dir/main.cpp.i
 
-CMakeFiles/Numerical_Analysis.dir/main2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Numerical_Analysis.dir/main2.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp -o CMakeFiles/Numerical_Analysis.dir/main2.cpp.s
+CMakeFiles/Numerical_Analysis.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Numerical_Analysis.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp -o CMakeFiles/Numerical_Analysis.dir/main.cpp.s
+
+CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o: CMakeFiles/Numerical_Analysis.dir/flags.make
+CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o: ../src/LinearAlgebra.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o -c /Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.cpp
+
+CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.cpp > CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.i
+
+CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.cpp -o CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.s
+
+CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o: CMakeFiles/Numerical_Analysis.dir/flags.make
+CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o: ../src/Algo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o -c /Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.cpp
+
+CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.cpp > CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.i
+
+CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.cpp -o CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.s
 
 # Object files for target Numerical_Analysis
 Numerical_Analysis_OBJECTS = \
-"CMakeFiles/Numerical_Analysis.dir/main2.cpp.o"
+"CMakeFiles/Numerical_Analysis.dir/main.cpp.o" \
+"CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o" \
+"CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o"
 
 # External object files for target Numerical_Analysis
 Numerical_Analysis_EXTERNAL_OBJECTS =
 
-Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/main2.cpp.o
+Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/main.cpp.o
+Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/src/LinearAlgebra.cpp.o
+Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/src/Algo.cpp.o
 Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/build.make
 Numerical_Analysis: /usr/local/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib
 Numerical_Analysis: CMakeFiles/Numerical_Analysis.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Numerical_Analysis"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/maedar/Desktop/TUS/Numerical_Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Numerical_Analysis"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Numerical_Analysis.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
