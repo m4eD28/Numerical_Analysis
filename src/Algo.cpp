@@ -246,4 +246,16 @@ std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _
   /* std::cout << "----------\n\n"; */
   return x;
 }
+
+std::vector<double> Euler_method(double x_0, double a, double T, int N) {
+  std::vector<double> x(N);
+  x.at(0) = x_0;
+  double h = T/N;
+  double t = 0;
+  for (int i = 1; i < N; i++) {
+    t += h;
+    x.at(i) = x.at(i-1) + h * a * x.at(i-1);
+  }
+  return x;
+}
 #endif

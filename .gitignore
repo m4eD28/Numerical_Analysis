@@ -1,3 +1,4 @@
 *.pdf
 Eigen/
 numerical-analysis/
+build/

@@ -111,98 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named a.out
+# Target rules for targets named Numerical_Analysis
 
 # Build rule for target.
-a.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 a.out
-.PHONY : a.out
+Numerical_Analysis: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Numerical_Analysis
+.PHONY : Numerical_Analysis
 
 # fast build rule for target.
-a.out/fast:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/build
-.PHONY : a.out/fast
+Numerical_Analysis/fast:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/build
+.PHONY : Numerical_Analysis/fast
 
-main.o: main.cpp.o
+main2.o: main2.cpp.o
 
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-src/Algo.o: src/Algo.cpp.o
-
-.PHONY : src/Algo.o
+.PHONY : main2.o
 
 # target to build an object file
-src/Algo.cpp.o:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/Algo.cpp.o
-.PHONY : src/Algo.cpp.o
+main2.cpp.o:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.o
+.PHONY : main2.cpp.o
 
-src/Algo.i: src/Algo.cpp.i
+main2.i: main2.cpp.i
 
-.PHONY : src/Algo.i
-
-# target to preprocess a source file
-src/Algo.cpp.i:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/Algo.cpp.i
-.PHONY : src/Algo.cpp.i
-
-src/Algo.s: src/Algo.cpp.s
-
-.PHONY : src/Algo.s
-
-# target to generate assembly for a file
-src/Algo.cpp.s:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/Algo.cpp.s
-.PHONY : src/Algo.cpp.s
-
-src/LinearAlgebra.o: src/LinearAlgebra.cpp.o
-
-.PHONY : src/LinearAlgebra.o
-
-# target to build an object file
-src/LinearAlgebra.cpp.o:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/LinearAlgebra.cpp.o
-.PHONY : src/LinearAlgebra.cpp.o
-
-src/LinearAlgebra.i: src/LinearAlgebra.cpp.i
-
-.PHONY : src/LinearAlgebra.i
+.PHONY : main2.i
 
 # target to preprocess a source file
-src/LinearAlgebra.cpp.i:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/LinearAlgebra.cpp.i
-.PHONY : src/LinearAlgebra.cpp.i
+main2.cpp.i:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.i
+.PHONY : main2.cpp.i
 
-src/LinearAlgebra.s: src/LinearAlgebra.cpp.s
+main2.s: main2.cpp.s
 
-.PHONY : src/LinearAlgebra.s
+.PHONY : main2.s
 
 # target to generate assembly for a file
-src/LinearAlgebra.cpp.s:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/LinearAlgebra.cpp.s
-.PHONY : src/LinearAlgebra.cpp.s
+main2.cpp.s:
+	$(MAKE) -f CMakeFiles/Numerical_Analysis.dir/build.make CMakeFiles/Numerical_Analysis.dir/main2.cpp.s
+.PHONY : main2.cpp.s
 
 # Help Target
 help:
@@ -212,16 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... a.out"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... src/Algo.o"
-	@echo "... src/Algo.i"
-	@echo "... src/Algo.s"
-	@echo "... src/LinearAlgebra.o"
-	@echo "... src/LinearAlgebra.i"
-	@echo "... src/LinearAlgebra.s"
+	@echo "... Numerical_Analysis"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
 .PHONY : help
 
 

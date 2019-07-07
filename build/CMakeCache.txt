@@ -204,6 +204,15 @@ Numerical_Analysis_BINARY_DIR:STATIC=/Users/maedar/Desktop/TUS/Numerical_Analysi
 //Value Computed by CMake
 Numerical_Analysis_SOURCE_DIR:STATIC=/Users/maedar/Desktop/TUS/Numerical_Analysis
 
+//Path to a file.
+PYTHON_INCLUDE_DIR:PATH=/usr/local/Frameworks/Python.framework/Versions/3.7/include/python3.7m
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/usr/local/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib
+
+//Path to a library.
+PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
@@ -340,4 +349,12 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/usr/local/Frameworks/Python.framework/Versions/3.7/lib/libpython3.7m.dylib][/usr/local/Frameworks/Python.framework/Versions/3.7/include/python3.7m][v3.7.3()]
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR
+PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
+PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 

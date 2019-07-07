@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/a.out.dir/main.cpp.o"
-  "CMakeFiles/a.out.dir/src/LinearAlgebra.cpp.o"
-  "CMakeFiles/a.out.dir/src/Algo.cpp.o"
+  "CMakeFiles/a.out.dir/main2.cpp.o"
   "a.out.pdb"
   "a.out"
 )

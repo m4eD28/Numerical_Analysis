@@ -6,31 +6,25 @@
 
 #IncludeRegexTransform: 
 
-../src/Algo.hpp
+/Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp
 iostream
 -
+src/matplotlibcpp.h
+/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
+
+/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
 vector
 -
-cmath
+map
 -
-memory
+numeric
 -
-LinearAlgebra.hpp
-../src/LinearAlgebra.hpp
-
-../src/LinearAlgebra.hpp
+stdexcept
+-
 iostream
 -
-vector
+functional
 -
-cmath
--
-
-/Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp
-LinearAlgebra.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/LinearAlgebra.hpp
-Algo.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/Algo.hpp
-iostream
+python2.7/Python.h
 -
 

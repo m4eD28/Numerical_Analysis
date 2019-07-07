@@ -26,4 +26,5 @@ std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A
 
 std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
+std::vector<double> Euler_method(double x_0, double a, double T, int N);
 #endif

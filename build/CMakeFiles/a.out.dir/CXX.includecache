@@ -6,43 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/maedar/Desktop/TUS/Numerical_Analysis/main.cpp
-src/LinearAlgebra.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.hpp
-src/Algo.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.hpp
+/Users/maedar/Desktop/TUS/Numerical_Analysis/main2.cpp
 iostream
 -
+src/matplotlibcpp.h
+/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
 
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.cpp
-iostream
--
+/Users/maedar/Desktop/TUS/Numerical_Analysis/src/matplotlibcpp.h
 vector
 -
-cmath
+map
 -
-memory
+numeric
 -
-LinearAlgebra.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.hpp
-
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/Algo.hpp
+stdexcept
+-
 iostream
 -
-vector
+functional
 -
-cmath
--
-memory
--
-LinearAlgebra.hpp
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.hpp
-
-/Users/maedar/Desktop/TUS/Numerical_Analysis/src/LinearAlgebra.hpp
-iostream
--
-vector
--
-cmath
+python2.7/Python.h
 -
 
