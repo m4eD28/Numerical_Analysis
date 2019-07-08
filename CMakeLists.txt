@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(Numerical_Analysis)
+project(Numerical_Analysis CXX)
 find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-lstdc++ -lpython2.7")
+set(CMAKE_CXX_FLAGS "-lpython2.7")
 # set(PYTHONINTERP_FOUND)
 # set(PYTHON_EXECUTABLE)
 

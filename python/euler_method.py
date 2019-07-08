@@ -16,6 +16,7 @@ for i in range(N):
     xx.append(x_new)
     x = x_new
 
+plt.xkcd()
 plt.plot(tt, xx, color='b')
 plt.plot(tt, x_ex, color='r')
 plt.xlabel('t')
