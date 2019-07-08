@@ -1,17 +1,19 @@
-#Numerical Analysis
-====
+# Numerical Analysis
 
 ## Overview
 数値解析の授業用ファイルたち
 
 ## Description
-fileバラバラ...
+cmakeでbuildする
 
-## Demo
-newfile/ にとりあえずぶちこんである...
-
-
-
+## Usage & Setup
+```bash=
+mkdir -p build
+cd build
+cmake ..
+make
+./Numerical_Analysis
+```
 
 ## Author
 
