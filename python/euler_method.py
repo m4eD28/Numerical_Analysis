@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
-import math
 import numpy as np
+import math
 
 a = 3; T = 4.0; x0 = 1;
 t = 0; x = x0;

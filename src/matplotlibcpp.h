@@ -33,8 +33,8 @@ namespace matplotlibcpp {
 
 			/* For now, _interpreter is implemented as a singleton since its currently not possible to have
 			   multiple independent embedded python interpreters without patching the python source code
-			   or starting a seperate process for each. 
-			   
+			   or starting a seperate process for each.
+
 				http://bytes.com/topic/python/answers/793370-multiple-independent-python-interpreters-c-c-program
 			   */
 
@@ -50,7 +50,7 @@ namespace matplotlibcpp {
 				Py_Initialize();
 
 				PyObject* pyplotname = PyString_FromString("matplotlib.pyplot");
-				PyObject* pylabname  = PyString_FromString("pylab"); 
+				PyObject* pylabname  = PyString_FromString("pylab");
 				if(!pyplotname || !pylabname) { throw std::runtime_error("couldnt create string"); }
 
 				PyObject* pymod = PyImport_Import(pyplotname);
@@ -76,10 +76,10 @@ namespace matplotlibcpp {
 
 				s_python_function_save = PyObject_GetAttrString(pylabmod, "savefig");
 
-				if(!s_python_function_show 
+				if(!s_python_function_show
 						|| !s_python_function_save
-						|| !s_python_function_figure 
-						|| !s_python_function_plot 
+						|| !s_python_function_figure
+						|| !s_python_function_plot
 						|| !s_python_function_legend
 						|| !s_python_function_xlim
 						|| !s_python_function_ylim
@@ -89,7 +89,7 @@ namespace matplotlibcpp {
 						|| !s_python_function_ylabel
 						|| !s_python_function_grid
 						|| !s_python_function_pause
-            ) 
+            )
 				{ throw std::runtime_error("Couldnt find required function!"); }
 
 				if(!PyFunction_Check(s_python_function_show)
@@ -98,7 +98,7 @@ namespace matplotlibcpp {
 					|| !PyFunction_Check(s_python_function_plot)
 					|| !PyFunction_Check(s_python_function_legend)
 					|| !PyFunction_Check(s_python_function_xlim)
-					|| !PyFunction_Check(s_python_function_ylim) 
+					|| !PyFunction_Check(s_python_function_ylim)
 					|| !PyFunction_Check(s_python_function_title)
 					|| !PyFunction_Check(s_python_function_axis)
 					|| !PyFunction_Check(s_python_function_xlabel)
@@ -117,7 +117,7 @@ namespace matplotlibcpp {
 		};
 	}
 
-	
+
 
 	template<typename Numeric>
 	bool plot(const std::vector<Numeric> &x, const std::vector<Numeric> &y, const std::map<std::string, std::string>& keywords)
@@ -270,7 +270,7 @@ namespace matplotlibcpp {
 		Py_DECREF(res);
 	}
 
-  
+
 	inline void title(const std::string &titlestr)
 	{
 		PyObject* pytitlestr = PyString_FromString(titlestr.c_str());
@@ -390,7 +390,7 @@ namespace matplotlibcpp {
 		template<typename T>
 		struct is_callable_impl<false, T>
 		{
-			typedef is_function<T> type;		
+			typedef is_function<T> type;
 		}; // a non-object is callable iff it is a function
 
 		template<typename T>
@@ -474,10 +474,10 @@ namespace matplotlibcpp {
 
 				if(begin(ticks) == end(ticks)) return true;
 
-				// We could use additional meta-programming to deduce the correct element type of y, 
+				// We could use additional meta-programming to deduce the correct element type of y,
 				// but all values have to be convertible to double anyways
 				std::vector<double> y;
-				for(auto x : ticks) y.push_back(f(x)); 
+				for(auto x : ticks) y.push_back(f(x));
 				return plot_impl<std::false_type>()(ticks,y,format);
 			}
 		};

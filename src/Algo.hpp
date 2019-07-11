@@ -20,7 +20,7 @@ std::vector<std::vector<double> > LU_decomposition(const std::vector<std::vector
 
 std::vector<std::vector<double> > Inverse_matrix(const std::vector<std::vector<double> >& A);
 
-std::vector<double>* Jacobi_law(const std::vector<std::vector<double> >& A, const std::vector<double>& b);
+std::vector<double> Jacobi_law(const std::vector<std::vector<double> >& A, const std::vector<double>& b);
 
 std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 

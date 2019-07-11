@@ -140,7 +140,7 @@ std::vector<std::vector<double> > Inverse_matrix(const std::vector<std::vector<d
 }
 
 std::vector<double> Jacobi_law(const std::vector<std::vector<double> >& A, const std::vector<double>& b) {
-  int M = 10000;
+  int M = 200;
   double eps = 1e-8;
   std::vector<std::vector<double> > x(M, std::vector<double>(A.size(), 1.0));
   double sum;
