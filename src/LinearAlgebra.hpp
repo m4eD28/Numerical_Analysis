@@ -4,6 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <limits>
+
+constexpr double eps = std::numeric_limits<double>::epsilon();
 
 void printVector(const std::vector<double>& a);
 
