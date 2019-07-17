@@ -3,7 +3,7 @@ import math
 import numpy as np
 
 def logistic_analysitc(u0, r, K, T):
-    return K / (1 + (K/u0 - 1) * math.exp(r*T))
+    return K / (1 + (K/u0 - 1) * math.exp(-1*r*T))
 
 def euler_logistic(u0, r, K, T, N, color='k'):
     tau = T/N
