@@ -1,34 +1,36 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.4.16)  20 JUL 2019 12:04
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.10.17)  24 JUL 2019 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **Euler_report.tex
 (./Euler_report.tex
-pLaTeX2e <2017/05/05> (based on LaTeX2e <2017-04-15>)
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/platex/jsclasses/jsarticle.cls
-Document Class: jsarticle 2017/03/05 okumura, texjporg
+pLaTeX2e <2017/10/28>+4 (based on LaTeX2e <2017-04-15>)
+Babel <3.17> and hyphenation patterns for 84 language(s) loaded.
+
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/platex/jsclasses/jsa
+rticle.cls
+Document Class: jsarticle 2017/10/04 jsclasses (okumura, texjporg)
 \jsc@mpt=\dimen118
 \jsc@mmm=\dimen119
 \jsc@smallskipamount=\skip41
-LaTeX Info: Redefining \rmfamily on input line 468.
-LaTeX Info: Redefining \sffamily on input line 471.
-LaTeX Info: Redefining \ttfamily on input line 474.
-LaTeX Info: Redefining \textmc on input line 477.
-LaTeX Info: Redefining \textgt on input line 479.
+LaTeX Info: Redefining \rmfamily on input line 471.
+LaTeX Info: Redefining \sffamily on input line 474.
+LaTeX Info: Redefining \ttfamily on input line 477.
+LaTeX Info: Redefining \textmc on input line 481.
+LaTeX Info: Redefining \textgt on input line 483.
 \symmincho=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 540.
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 545.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 731.
+(Font)              scaled to size 9.60999pt on input line 736.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 731.
+(Font)              scaled to size 9.60999pt on input line 736.
 \fullwidth=\dimen120
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 883.
+(Font)              scaled to size 7.68799pt on input line 889.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 7.68799pt on input line 883.
+(Font)              scaled to size 7.68799pt on input line 889.
 \c@part=\count82
 \c@section=\count83
 \c@subsection=\count84
@@ -43,7 +45,9 @@ LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
 \jsc@tocl@width=\dimen121
 \@lnumwidth=\dimen122
 \bibindent=\dimen123
-(/usr/local/texlive/2017/texmf-dist/tex/platex/jsclasses/jslogo.sty
+
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/platex/jsclasses/jsl
+ogo.sty
 Package: jslogo 2017/02/24 okumura, texjporg
 LaTeX Info: Redefining \TeX on input line 94.
 LaTeX Info: Redefining \LaTeX on input line 147.
@@ -51,24 +55,30 @@ LaTeX Info: Redefining \LaTeXe on input line 200.
 )
 \heisei=\count90
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/11/05 v2.16a AMS math features
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsmath/amsmat
+h.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsmath/amstex
+t.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen
+.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen124
 ))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy
+.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen125
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn
+.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count91
@@ -109,18 +119,22 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsfonts/amssy
+mb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfo
+nts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/listings/listi
+ngs.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics/keyva
+l.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )
@@ -137,13 +151,15 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \lst@lineno=\count108
 \lst@maxwidth=\dimen136
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/listings/lstmi
+sc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count109
 \lst@skipnumbers=\count110
 \lst@framebox=\box46
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/listings/listi
+ngs.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
@@ -155,110 +171,113 @@ Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: sty)
 
 Enter file name: 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics/graph
+icx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics/graph
+ics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics/trig.
+sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics-cfg/g
+raphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvipdfmx.def on input line 99.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
-File: dvipdfmx.def 2016/07/11 v4.12 LaTeX color/graphics driver for dvipdfmx (L
-3/ChoF)
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/graphics-def/d
+vipdfmx.def
+File: dvipdfmx.def 2017/06/24 v5.0g Graphics/color driver for dvipdfmx
 ))
 \Gin@req@height=\dimen137
 \Gin@req@width=\dimen138
-)
-(./Euler_report.aux)
+) (./Euler_report.aux)
 \openout1 = `Euler_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 \c@lstlisting=\count111
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 32.
+(Font)              scaled to size 16.60605pt on input line 38.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 32.
+(Font)              scaled to size 16.60605pt on input line 38.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 32.
+(Font)              scaled to size 11.53198pt on input line 38.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 32.
+(Font)              scaled to size 11.53198pt on input line 38.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 32.
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+(Font)              scaled to size 5.76599pt on input line 38.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.
+fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.
+fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 36.
+(Font)              scaled to size 13.83836pt on input line 43.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 36.
+(Font)              scaled to size 13.83836pt on input line 43.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 36.
+(Font)              scaled to size 13.83836pt on input line 43.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 13.83836pt on input line 36.
+(Font)              scaled to size 13.83836pt on input line 43.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 43.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 43.
+(Font)              scaled to size 9.60999pt on input line 50.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 43.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 43.
+(Font)              scaled to size 9.60999pt on input line 50.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 44.
+(Font)              scaled to size 6.72699pt on input line 51.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 44.
+(Font)              scaled to size 4.805pt on input line 51.
  [1]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 85.
+(Font)              scaled to size 11.53198pt on input line 91.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 85.
-
-[2]
+(Font)              scaled to size 11.53198pt on input line 91.
+ [2]
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 134.
-LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 134.
-LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 134.
+(Font)              scaled to size 8.64899pt on input line 138.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 138.
  [3] [4] [5] [6] [7] [8] (./Euler_report.aux) ) 
 Here is how much of TeX's memory you used:
- 2930 strings out of 493653
- 37833 string characters out of 6148874
- 145756 words of memory out of 5000000
- 6513 multiletter control sequences out of 15000+600000
- 18841 words of font info for 86 fonts, out of 8000000 for 9000
+ 2975 strings out of 493638
+ 39877 string characters out of 6141725
+ 104579 words of memory out of 5000000
+ 6549 multiletter control sequences out of 15000+600000
+ 19892 words of font info for 90 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 27i,9n,32p,362b,1540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,9n,32p,362b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Euler_report.dvi (9 pages, 16448 bytes).
+Output written on Euler_report.dvi (9 pages, 11272 bytes).
