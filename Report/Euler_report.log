@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.10.17)  24 JUL 2019 11:37
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.10.17)  31 JUL 2019 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -249,35 +249,157 @@ LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 13.83836pt on input line 43.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 50.
+(Font)              scaled to size 9.60999pt on input line 51.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 50.
+(Font)              scaled to size 9.60999pt on input line 51.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 51.
+(Font)              scaled to size 6.72699pt on input line 52.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 51.
+(Font)              scaled to size 4.805pt on input line 52.
  [1]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 91.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 (Font)              scaled to size 11.53198pt on input line 91.
  [2]
+File: x1,0y1,0mu1,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega1,0t1,00e+02n1,00e+03.png>
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 138.
+(Font)              scaled to size 8.64899pt on input line 142.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 138.
- [3] [4] [5] [6] [7] [8] (./Euler_report.aux) ) 
-Here is how much of TeX's memory you used:
- 2975 strings out of 493638
- 39877 string characters out of 6141725
- 104579 words of memory out of 5000000
- 6549 multiletter control sequences out of 15000+600000
- 19892 words of font info for 90 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 27i,9n,32p,362b,344s stack positions out of 5000i,500n,10000p,200000b,80000s
+(Font)              scaled to size 8.64899pt on input line 142.
+ [3]
+File: x1,0y1,0mu-1,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu-1,0omega1,0t1,00e+02n1,00e+03.png>
+File: x1,0y1,0mu0,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu0,0omega1,0t1,00e+02n1,00e+03.png>
+ [4]
+File: x1,0y1,0mu2,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu2,0omega1,0t1,00e+02n1,00e+03.png>
+File: x1,0y1,0mu1,0omega-1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega-1,0t1,00e+02n1,00e+03.png>
+ [5]
+File: x1,0y1,0mu1,0omega0,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega0,0t1,00e+02n1,00e+03.png>
+File: x1,0y1,0mu1,0omega2,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega2,0t1,00e+02n1,00e+03.png>
+ [6]
+File: x-3,0y-3,0mu1,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x-3,0y-3,0mu1,0omega1,0t1,00e+02n1,00e+03.png>
+File: x3,0y3,0mu1,0omega1,0t1,00e+02n1,00e+03.png Graphic file (type bmp)
+<x3,0y3,0mu1,0omega1,0t1,00e+02n1,00e+03.png>
+ [7]
+File: x1,0y1,0mu1,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega1,0t1,00e+02n2,00e+03.png>
+File: x1,0y1,0mu-1,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu-1,0omega1,0t1,00e+02n2,00e+03.png>
+ [8]
+File: x1,0y1,0mu0,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu0,0omega1,0t1,00e+02n2,00e+03.png>
+File: x1,0y1,0mu2,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu2,0omega1,0t1,00e+02n2,00e+03.png>
+ [9]
+File: x1,0y1,0mu1,0omega-1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega-1,0t1,00e+02n2,00e+03.png>
+File: x1,0y1,0mu1,0omega0,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega0,0t1,00e+02n2,00e+03.png>
+ [10]
+File: x1,0y1,0mu1,0omega2,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega2,0t1,00e+02n2,00e+03.png>
+File: x-3,0y-3,0mu1,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x-3,0y-3,0mu1,0omega1,0t1,00e+02n2,00e+03.png>
+ [11]
+File: x3,0y3,0mu1,0omega1,0t1,00e+02n2,00e+03.png Graphic file (type bmp)
+<x3,0y3,0mu1,0omega1,0t1,00e+02n2,00e+03.png>
+File: x1,0y1,0mu1,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega1,0t1,00e+02n1,00e+04.png>
+ [12]
+File: x1,0y1,0mu-1,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu-1,0omega1,0t1,00e+02n1,00e+04.png>
+File: x1,0y1,0mu0,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu0,0omega1,0t1,00e+02n1,00e+04.png>
+ [13]
+File: x1,0y1,0mu2,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu2,0omega1,0t1,00e+02n1,00e+04.png>
+File: x1,0y1,0mu1,0omega-1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega-1,0t1,00e+02n1,00e+04.png>
+ [14]
+File: x1,0y1,0mu1,0omega0,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega0,0t1,00e+02n1,00e+04.png>
+File: x1,0y1,0mu1,0omega2,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x1,0y1,0mu1,0omega2,0t1,00e+02n1,00e+04.png>
+ [15]
+File: x-3,0y-3,0mu1,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x-3,0y-3,0mu1,0omega1,0t1,00e+02n1,00e+04.png>
+File: x3,0y3,0mu1,0omega1,0t1,00e+02n1,00e+04.png Graphic file (type bmp)
+<x3,0y3,0mu1,0omega1,0t1,00e+02n1,00e+04.png>
 
-Output written on Euler_report.dvi (9 pages, 11272 bytes).
+[16]
+File: u3,0v3,0a11,0b10,0c1-1,0a2-1,0b21,0c20,0t1,00e+01n1,00e+03.png Graphic fi
+le (type bmp)
+<u3,0v3,0a11,0b10,0c1-1,0a2-1,0b21,0c20,0t1,00e+01n1,00e+03.png>
+ [17]
+File: u3,0v3,0a11,9b10,0c1-1,9a21,9b20,0c21,9t1,00e+01n1,00e+03.png Graphic fil
+e (type bmp)
+<u3,0v3,0a11,9b10,0c1-1,9a21,9b20,0c21,9t1,00e+01n1,00e+03.png>
+ [18]
+File: u3,0v3,0a114,0b1-1,1c1-0,9a220,0b2-0,5c2-0,4t1,00e+01n1,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a114,0b1-1,1c1-0,9a220,0b2-0,5c2-0,4t1,00e+01n1,00e+03.png>
+File: u3,0v3,0a122,0b1-0,2c1-0,4a217,0b2-0,5c2-0,3t1,00e+01n1,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a122,0b1-0,2c1-0,4a217,0b2-0,5c2-0,3t1,00e+01n1,00e+03.png>
+ [19]
+File: u3,0v3,0a123,2b1-0,6c1-0,4a218,8b2-0,5c2-0,3t1,00e+01n1,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a123,2b1-0,6c1-0,4a218,8b2-0,5c2-0,3t1,00e+01n1,00e+03.png>
+ [20]
+File: u3,0v3,0a125,0b1-0,1c1-0,4a220,0b2-0,2c2-0,1t1,00e+01n1,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a125,0b1-0,1c1-0,4a220,0b2-0,2c2-0,1t1,00e+01n1,00e+03.png>
+File: u3,0v3,0a11,0b10,0c1-1,0a2-1,0b21,0c20,0t1,00e+01n2,00e+03.png Graphic fi
+le (type bmp)
+<u3,0v3,0a11,0b10,0c1-1,0a2-1,0b21,0c20,0t1,00e+01n2,00e+03.png>
+ [21]
+File: u3,0v3,0a11,9b10,0c1-1,9a21,9b20,0c21,9t1,00e+01n2,00e+03.png Graphic fil
+e (type bmp)
+<u3,0v3,0a11,9b10,0c1-1,9a21,9b20,0c21,9t1,00e+01n2,00e+03.png>
+ [22]
+File: u3,0v3,0a114,0b1-1,1c1-0,9a220,0b2-0,5c2-0,4t1,00e+01n2,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a114,0b1-1,1c1-0,9a220,0b2-0,5c2-0,4t1,00e+01n2,00e+03.png>
+File: u3,0v3,0a122,0b1-0,2c1-0,4a217,0b2-0,5c2-0,3t1,00e+01n2,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a122,0b1-0,2c1-0,4a217,0b2-0,5c2-0,3t1,00e+01n2,00e+03.png>
+ [23]
+File: u3,0v3,0a123,2b1-0,6c1-0,4a218,8b2-0,5c2-0,3t1,00e+01n2,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a123,2b1-0,6c1-0,4a218,8b2-0,5c2-0,3t1,00e+01n2,00e+03.png>
+ [24]
+File: u3,0v3,0a125,0b1-0,1c1-0,4a220,0b2-0,2c2-0,1t1,00e+01n2,00e+03.png Graphi
+c file (type bmp)
+<u3,0v3,0a125,0b1-0,1c1-0,4a220,0b2-0,2c2-0,1t1,00e+01n2,00e+03.png>
+ [25]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 278.
+
+
+(/Applications/TeXLive/Library/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 278.
+ [26] [27] (./Euler_report.aux) ) 
+Here is how much of TeX's memory you used:
+ 3119 strings out of 493638
+ 48413 string characters out of 6141725
+ 103579 words of memory out of 5000000
+ 6631 multiletter control sequences out of 15000+600000
+ 19724 words of font info for 89 fonts, out of 8000000 for 9000
+ 934 hyphenation exceptions out of 8191
+ 27i,9n,32p,524b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Euler_report.dvi (28 pages, 30820 bytes).
