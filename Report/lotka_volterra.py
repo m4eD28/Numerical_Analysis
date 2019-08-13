@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 import random
+import copy
 import sys
 
 
@@ -64,6 +65,13 @@ def euler_lotka_volterra(u0, v0, a1, b1, c1, a2, b2, c2, T, N, color='k'):
 
 
 if __name__ == '__main__':
+    # x1, y1 = euler_lotka_volterra(3, 3, 1, 0, -1, -1, 0, 0, 100, 1000, )
+    # # plt.show()
+    # x1 = copy.deepcopy(x1)
+    # y1 = copy.deepcopy(y1)
+    # x2, y2 = euler_lotka_volterra(3, 3, 1, 0, -1, -1, 0, 0, 100, 10000, )
+    # print('(xの誤差) = %f, (yの誤差) = %f' % (abs(x1[-1]-x2[-1]), abs(y1[-1]-y2[-1])))
+
     # N = 1000
     # euler_lotka_volterra(3, 3, 22, -0.2, -0.4, 17, -0.5, -0.3, 10, 1000, )
     # euler_lotka_volterra(3, 3, 14, -1.1, -0.9, 20, -0.5, -0.4, 10, 1000, )
@@ -73,9 +81,9 @@ if __name__ == '__main__':
     # euler_lotka_volterra(3.0, 3.0, 1, 0, -1, -1, 1, 0, 10, 1000, )
 
     # N = 2000
-    euler_lotka_volterra(3, 3, 22, -0.2, -0.4, 17, -0.5, -0.3, 10, 2000, )
-    euler_lotka_volterra(3, 3, 14, -1.1, -0.9, 20, -0.5, -0.4, 10, 2000, )
-    euler_lotka_volterra(3.0, 3.0, 1.9, 0, -1.901, 1.9, 0, 1.9, 10, 2000, )
-    euler_lotka_volterra(3.0, 3.0, 25, -0.1, -0.4, 20, -0.2, -0.1, 10, 2000, )
-    euler_lotka_volterra(3.0, 3.0, 23.2, -0.6, -0.401, 18.8, -0.5, -0.3, 10, 2000, )
-    euler_lotka_volterra(3.0, 3.0, 1, 0, -1, -1, 1, 0, 10, 2000, )
+    # euler_lotka_volterra(3, 3, 22, -0.2, -0.4, 17, -0.5, -0.3, 10, 2000, )
+    # euler_lotka_volterra(3, 3, 14, -1.1, -0.9, 20, -0.5, -0.4, 10, 2000, )
+    # euler_lotka_volterra(3.0, 3.0, 1.9, 0, -1.901, 1.9, 0, 1.9, 10, 2000, )
+    # euler_lotka_volterra(3.0, 3.0, 25, -0.1, -0.4, 20, -0.2, -0.1, 10, 2000, )
+    # euler_lotka_volterra(3.0, 3.0, 23.2, -0.6, -0.401, 18.8, -0.5, -0.3, 10, 2000, )
+    # euler_lotka_volterra(3.0, 3.0, 1, 0, -1, -1, 1, 0, 10, 2000, )
