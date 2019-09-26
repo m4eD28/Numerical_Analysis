@@ -1,16 +1,16 @@
 #include "../src/LinearAlgebra.hpp"
 #include "../src/Algo.hpp"
 #include <iostream>
+#include <cmath>
 
-
-std::vector<std::vector<double> > Generate_Matrix(int N, double d) {
+std::vector<std::vector<double> > Generate_Matrix(int N, int d) {
   std::vector<std::vector<double> > A(N, std::vector<double>(N, 0));
   for (int i = 1; i <= N; i++) {
     for (int j = 1; j <= N; j++) {
       if (i == j) {
-        A.at(i-1).at(j-1) = (100 * 100 + d * (i - 1)) * i;
-      } else {
-        A.at(i-1).at(j-1) = (j + d * (i - 1)) * i;
+        A.at(i-1).at(j-1) = 6;
+      } else if (abs(i - j) <= d){
+        A.at(i-1).at(j-1) = -1;
       }
     }
   }
@@ -59,8 +59,12 @@ void kadai(double a) {
 }
 
 int main() {
-  Jacobi(10, 1);
-  Gauss_Seidel(10, 1);
+  Jacobi(5, 1);
+  Gauss_Seidel(5, 1);
+  /* std::vector<std::vector<double>> A = Generate_Matrix(5, 1); */
+  /* printMatrix(A); */
+  /* std::vector<std::vector<double>> B = Generate_Matrix(5, 2); */
+  /* printMatrix(B); */
 
   return 0;
 }
