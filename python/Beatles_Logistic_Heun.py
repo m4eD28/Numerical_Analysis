@@ -3,11 +3,14 @@ import math
 import numpy as np
 
 
-def logistic_analysitc(u0, r, K, T):
-    return K / (1 + (K/u0 - 1) * math.exp(-1*r*T))
+# def logistic_analysitc(u0, r, K, T):
+#     return K / (1 + (K/u0 - 1) * math.exp(-1*r*T))
+
+def logistic_analysitc(N0, r, K, T):
+    return N0 * K * math.exp(r * T) / (K + N0 * (math.exp(r * T) - 1))
 
 
-def function_p(N, A=2.01, B=8.01):
+def function_p(N, A=4.0, B=1.0):
     return B*N**2 / (A**2 + N**2)
 
 
@@ -27,8 +30,8 @@ def euler_logistic(u0, r, K, T, N, color='k'):
 
     plt.plot(tt, uu, color=color)
     plt.xlabel('t')
-    plt.ylabel('u(t)')
-    plt.title('u(t), u0 = %d, r = %d, K = %d' % (u0, r, K))
+    plt.ylabel('N(t)')
+    plt.title('N(t), N0 = %d, r = %d, K = %d, T = %d' % (u0, r, K, T))
     return uu
 
 
