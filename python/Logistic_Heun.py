@@ -7,17 +7,17 @@ def logistic_analysitc(N0, r, K, T):
     return N0 * K * math.exp(r * T) / (K + N0 * (math.exp(r * T) - 1))
 
 
-def Heun_Logistic(u0, r, K, T, N, color='k'):
+def Heun_Logistic(u0, r, K, p, T, N, color='k'):
     tau = T/N
     tt = np.linspace(0, T, N+1)
     uu = []
     uu = np.append(uu, u0)
     u, t = u0, 0
     for i in range(N):
-        u_new = u + tau*r*u*(1 - u/K)
+        # u_new = u + tau*r*u*(1 - u/K) - tau*p
         t = t + tau
-        u_mid = u + tau*r*u*(1-u/K)
-        u_new = u + tau/2*(r*u*(1 - u/K) + r*u_mid*(1 - u_mid/K))
+        u_mid = u + tau*r*u*(1-u/K) - tau*p
+        u_new = u + tau/2*(r*u*(1 - u/K) - r*p + r*u_mid*(1 - u_mid/K) - r*p)
         uu = np.append(uu, u_new)
         u = u_new
 
@@ -25,6 +25,7 @@ def Heun_Logistic(u0, r, K, T, N, color='k'):
     plt.xlabel('t')
     plt.ylabel('N(t)')
     plt.title('N(t), N0 = %d, r = %d, K = %d, T = %d' % (u0, r, K, T))
+    print('x(N_t) = %.8e' % uu[-1])
     return uu
 
 
@@ -79,13 +80,13 @@ if __name__ == '__main__':
     # plt.tight_layout()
     # plt.show()
 
-    uu1 = Heun_Logistic(1, 1, 30, 8, 3200, )
+    uu1 = Heun_Logistic(80, 1, 100, 20, 10, 2000, )
     plt.show()
-    uu2 = Heun_Logistic(1, 1, 30, 40, 3200, )
-    plt.show()
+    # uu2 = Heun_Logistic(1, 1, 30, 40, 3200, )
+    # plt.show()
 
     # (3) --------------------------------
-    error(1, 1, 30, 40, 200)
-    error(1, 1, 30, 40, 400)
-    error(1, 1, 30, 40, 800)
-    error(1, 1, 30, 40, 1600)
+    # error(1, 1, 30, 40, 200)
+    # error(1, 1, 30, 40, 400)
+    # error(1, 1, 30, 40, 800)
+    # error(1, 1, 30, 40, 1600)
