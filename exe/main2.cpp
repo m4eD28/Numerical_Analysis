@@ -19,6 +19,7 @@ int main(){
     x_ex.at(i+1) = x0*pow(M_E, a*t);
   }
 
+  plt::xkcd();
   plt::plot(xx, "b");
   plt::plot(x_ex, "r");
 	plt::title("Plot");

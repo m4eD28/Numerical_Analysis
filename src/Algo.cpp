@@ -2,6 +2,7 @@
 #define ALOG_H
 
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -58,8 +59,7 @@ std::vector<std::vector<double> > Forward_erase(const std::vector<std::vector<do
 /*   return x; */
 /* } */
 
-std::vector<double> Backward_sub(const std::vector<std::vector<double> >& _A,const std::vector<double>& _b) {
-  std::vector<std::vector<double> > A(_A);
+std::vector<double> Backward_sub(const std::vector<std::vector<double> >& A,const std::vector<double>& _b) {
   std::vector<double> b(_b);
   std::vector<double> x(A.size());
   for (int k = A.size()-1; k >= 0; k--) {
@@ -197,8 +197,114 @@ std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A
   return x.at(0);
 }
 
-std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b) {
-  int n = 20;
+std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+  std::vector<std::vector<double> > A(_A);
+  std::vector<double> b(_b);
+  double alpha;
+  for (int k = 0; k < A.size()-1; k++) {
+    for (int i = k+1; i < A.size(); i++) {
+      alpha = A.at(i).at(k) / A.at(k).at(k);
+      for (int j = k+1; j < A.size(); j++) {
+        A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
+      }
+      b.at(i) = b.at(i) - alpha*b.at(k);
+    }
+  }
+
+  std::vector<double> x1 = Backward_sub(A, b);
+
+  /* std::vector<double> gaus_b(n, 1.0); */
+  /* std::vector<std::vector<double> > A_Inverse; */
+  /* A_Inverse = Inverse_matrix(A); */
+
+
+  // prints
+  std::cout << "A = " << std::endl;
+  printMatrix(A);
+  std::cout << "b = " << std::endl;
+  printVector(b);
+  std::cout << "x = " << std::endl;
+  printVector_more_detail(x1);
+
+
+  /* double A_Norm_inf = MatrixNormInfty(A); */
+  /* printf("Hilbert_Norm_inf = %.2e\n\n",A_Norm_inf); */
+  /* std::cout << "----------\n\n"; */
+  /* double A_Inverse_Norm_inf = MatrixNormInfty(A_Inverse); */
+  /* printf("Hilbert_Inverse_Norm_inf = %.2e\n\n",A_Inverse_Norm_inf); */
+  /* std::cout << "----------\n\n"; */
+
+  /* // Kappa */
+  /* std::cout << "Kappa = \n"; */
+  /* double kappa = MatrixNormInfty(A) * MatrixNormInfty(A_Inverse); */
+  /* printf("%.2e\n\n",kappa); */
+  /* std::cout << "----------\n\n"; */
+
+  double b_Ax = VectorNormInfty(VectorSubstract(_b, MatrixVector(_A, x1)));
+  printf("|b - Ax|_inf = %.8e\n", b_Ax);
+  std::cout << "----------\n\n";
+
+  /* double x_tilde_x = VectorNormInfty(VectorSubstract(x_tilde, x)); */
+  /* printf("|x* - x|_inf = %.2e\n", x_tilde_x); */
+  /* std::cout << "----------\n\n"; */
+  return x1;
+}
+
+std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+  std::vector<std::vector<double> > A(_A);
+  std::vector<double> b(_b);
+  std::vector<std::vector<double> > A_true(_A);
+  std::vector<double> b_true(_b);
+  double alpha;
+  for (int k = 0; k < A.size()-1; k++) {
+
+    /* pivot選択 */
+    double max = abs(A.at(k).at(k));
+    int index = k;
+    for (int i = k; i < n; i++) {
+      if(max < abs(A.at(i).at(k))){
+        max = abs(A.at(i).at(k));
+        index = i;
+      }
+    }
+    /* int index = std::max_element(A.at(k).at(k), A.at(k).at(k+1)); */
+    /* std::vector<double>::iterator index = *std::max_element(A.at(k).at(k), A.at(n-1).at(k)); */
+
+    for (int i = k; i < n; i++) {
+      std::swap(A.at(index).at(i), A.at(k).at(i));
+    }
+    for (int i = 0; i < n; i++) {
+      std::swap(A_true.at(index).at(i), A_true.at(k).at(i));
+    }
+
+    std::swap(b.at(index), b.at(k));
+    std::swap(b_true.at(index), b_true.at(k));
+
+    for (int i = k+1; i < A.size(); i++) {
+      alpha = A.at(i).at(k) / A.at(k).at(k);
+      for (int j = k+1; j < A.size(); j++) {
+        A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
+      }
+      b.at(i) = b.at(i) - alpha*b.at(k);
+    }
+  }
+
+  std::vector<double> x = Backward_sub(A, b);
+
+  std::cout << "A = " << std::endl;
+  printMatrix(A);
+  std::cout << "b = " << std::endl;
+  printVector(b);
+  std::cout << "x = " << std::endl;
+  printVector_more_detail(x);
+
+  double b_Ax = VectorNorm2(VectorSubstract(b_true, MatrixVector(A_true, x)));
+  printf("|b - Ax|_inf = %.8e\n", b_Ax);
+  std::cout << "----------\n\n";
+  return x;
+}
+
+double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   double alpha;
@@ -214,37 +320,51 @@ std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _
 
   std::vector<double> x = Backward_sub(A, b);
 
-  /* std::vector<double> gaus_b(n, 1.0); */
-  /* std::vector<std::vector<double> > A_Inverse; */
-  /* A_Inverse = Inverse_matrix(A); */
+  double b_Ax = VectorNorm2(VectorSubstract(_b, MatrixVector(_A, x)));
 
-  std::cout << "A = " << std::endl;
-  printMatrix(A);
-  std::cout << "b = " << std::endl;
-  printVector(b);
-  std::cout << "x = " << std::endl;
-  printVector_more_detail(x);
-  /* double A_Norm_inf = MatrixNormInfty(A); */
-  /* printf("Hilbert_Norm_inf = %.2e\n\n",A_Norm_inf); */
-  /* std::cout << "----------\n\n"; */
-  /* double A_Inverse_Norm_inf = MatrixNormInfty(A_Inverse); */
-  /* printf("Hilbert_Inverse_Norm_inf = %.2e\n\n",A_Inverse_Norm_inf); */
-  /* std::cout << "----------\n\n"; */
+  return b_Ax;
+}
 
-  /* // Kappa */
-  /* std::cout << "Kappa = \n"; */
-  /* double kappa = MatrixNormInfty(A) * MatrixNormInfty(A_Inverse); */
-  /* printf("%.2e\n\n",kappa); */
-  /* std::cout << "----------\n\n"; */
+double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+  std::vector<std::vector<double> > A(_A);
+  std::vector<std::vector<double> > A_true(_A);
+  std::vector<double> b(_b);
+  std::vector<double> b_true(_b);
+  double alpha;
+  for (int k = 0; k < A.size()-1; k++) {
 
-  /* double b_Ax = VectorNormInfty(VectorSubstract(gaus_b, MatrixVector(A, gaus_b))); */
-  /* printf("|b - Ax|_inf = %.2e\n", b_Ax); */
-  /* std::cout << "----------\n\n"; */
+    /* pivot選択 */
+    double max = abs(A.at(k).at(k));
+    int index = k;
+    for (int i = k; i < n; i++) {
+      if(max < abs(A.at(i).at(k))){
+        max = abs(A.at(i).at(k));
+        index = i;
+      }
+    }
 
-  /* double x_tilde_x = VectorNormInfty(VectorSubstract(x_tilde, x)); */
-  /* printf("|x* - x|_inf = %.2e\n", x_tilde_x); */
-  /* std::cout << "----------\n\n"; */
-  return x;
+    for (int i = k; i < n; i++) {
+      std::swap(A.at(index).at(i), A.at(k).at(i));
+    }
+    for (int i = 0; i < n; i++) {
+      std::swap(A_true.at(index).at(i), A_true.at(k).at(i));
+    }
+    std::swap(b.at(index), b.at(k));
+    std::swap(b_true.at(index), b_true.at(k));
+
+    for (int i = k+1; i < A.size(); i++) {
+      alpha = A.at(i).at(k) / A.at(k).at(k);
+      for (int j = k+1; j < A.size(); j++) {
+        A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
+      }
+      b.at(i) = b.at(i) - alpha*b.at(k);
+    }
+  }
+
+  std::vector<double> x = Backward_sub(A, b);
+
+  double b_Ax = VectorNorm2(VectorSubstract(b_true, MatrixVector(A_true, x)));
+  return b_Ax;
 }
 
 std::vector<double> Euler_method(double x_0, double a, double T, int N) {
