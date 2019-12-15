@@ -292,16 +292,16 @@ std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double
 
   std::vector<double> x = Backward_sub(A, b);
 
-  std::cout << "A = " << std::endl;
-  printMatrix(A);
-  std::cout << "b = " << std::endl;
-  printVector(b);
-  std::cout << "x = " << std::endl;
-  printVector_more_detail(x);
+  /* std::cout << "A = " << std::endl; */
+  /* printMatrix(A); */
+  /* std::cout << "b = " << std::endl; */
+  /* printVector(b); */
+  /* std::cout << "x = " << std::endl; */
+  /* printVector_more_detail(x); */
 
   double b_Ax = VectorNorm2(VectorSubstract(b_true, MatrixVector(A_true, x)));
-  printf("|b - Ax|_inf = %.8e\n", b_Ax);
-  std::cout << "----------\n\n";
+  /* printf("|b - Ax|_inf = %.8e\n", b_Ax); */
+  /* std::cout << "----------\n\n"; */
   return x;
 }
 
@@ -309,7 +309,6 @@ double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   double alpha;
-  std::cout << "no_pivot" << std::endl;
   for (int k = 0; k < A.size()-1; ++k) {
     for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
@@ -336,7 +335,6 @@ double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A,
   int n = A.size();
   int index;
   double max = A.at(0).at(0);
-  std::cout << "pivot" << std::endl;
   for (int k = 0; k < A.size()-1; ++k) {
 
     /* pivot選択 */

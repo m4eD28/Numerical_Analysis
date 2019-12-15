@@ -15,7 +15,7 @@ void printVector(const std::vector<double>& a) {
 
 void printVector_more_detail(const std::vector<double>& a) {
   for (int i = 0; i < a.size(); i++) {
-    printf("|%.14e|\n",a[i]);
+    printf("|%.10e|\n",a[i]);
   }
   std::cout << std::endl;
 }
@@ -32,6 +32,16 @@ void printMatrix(const std::vector<std::vector<double> >& A) {
     }
   }
   std::cout << std::endl;
+}
+
+std::vector<double> VectorAdd(const std::vector<double>& a, const std::vector<double>& b) {
+  unsigned long n = a.size();
+  std::vector<double> c(n);
+  for (int i = 0; i < n; i++) {
+    c.at(i) = a.at(i) + b.at(i);
+  }
+
+  return c;
 }
 
 std::vector<double> VectorSubstract(const std::vector<double>& a, const std::vector<double>& b) {
