@@ -12,10 +12,10 @@
 std::vector<std::vector<double> > Forward_erase(const std::vector<std::vector<double> >& _A, std::vector<double>& b) {
   std::vector<std::vector<double> > A(_A);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
-    for (int i = k+1; i < A.size(); i++) {
+  for (int k = 0; k < A.size()-1; ++k) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       b.at(i) = b.at(i) - alpha*b.at(k);
@@ -28,10 +28,10 @@ std::vector<std::vector<double> > Forward_erase(const std::vector<std::vector<do
 std::vector<std::vector<double> > Forward_erase(const std::vector<std::vector<double> >& _A) {
   std::vector<std::vector<double> > A(_A);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
-    for (int i = k+1; i < A.size(); i++) {
+  for (int k = 0; k < A.size()-1; ++k) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       A.at(i).at(k) = alpha;
@@ -48,7 +48,7 @@ std::vector<std::vector<double> > Forward_erase(const std::vector<std::vector<do
 /*   double sum = 0; */
 /*   for (int k = A.size()-1; k >= 0; k--) { */
 /*     sum = 0; */
-/*     for (int j = k+1; j < A.size(); j++) { */
+/*     for (int j = k+1; j < A.size(); ++j) { */
 /*       sum += A.at(k).at(j) * x.at(j); */
 /*       /1* sum += A.at(k).at(j) * x.at(j) / A.at(k).at(k); *1/ */
 /*     } */
@@ -63,7 +63,7 @@ std::vector<double> Backward_sub(const std::vector<std::vector<double> >& A,cons
   std::vector<double> b(_b);
   std::vector<double> x(A.size());
   for (int k = A.size()-1; k >= 0; k--) {
-    for (int j = k+1; j < A.size(); j++) {
+    for (int j = k+1; j < A.size(); ++j) {
       b.at(k) -= A.at(k).at(j) * x.at(j);
     }
     x.at(k) = b.at(k) / A.at(k).at(k);
@@ -77,9 +77,9 @@ std::vector<double> Backward_sub(const std::vector<std::vector<double> >& A,cons
 /*   std::vector<double> b(_b); */
 /*   std::vector<double> y(A.size()); */
 /*   double sum; */
-/*   for (int k = 0; k < b.size(); k++) { */
+/*   for (int k = 0; k < b.size(); ++k) { */
 /*     sum = 0; */
-/*     for (int j = 0; j < k; j++) { */
+/*     for (int j = 0; j < k; ++j) { */
 /*       sum += A.at(k).at(j) * y.at(j); */
 /*     } */
 /*     y.at(k) = b.at(k) - sum; */
@@ -92,8 +92,8 @@ std::vector<double> Forward_sub(const std::vector<std::vector<double> >& _A,cons
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   std::vector<double> y(b);
-  for (int k = 0; k < b.size(); k++) {
-    for (int j = 0; j < k; j++) {
+  for (int k = 0; k < b.size(); ++k) {
+    for (int j = 0; j < k; ++j) {
       y.at(k) -= A.at(k).at(j) * y.at(j);
     }
   }
@@ -105,11 +105,11 @@ std::vector<double> Forward_sub(const std::vector<std::vector<double> >& _A,cons
 std::vector<std::vector<double> > LU_decomposition(const std::vector<std::vector<double> >& _A) {
   std::vector<std::vector<double> > A(_A);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
-    for (int i = k+1; i < A.size(); i++) {
+  for (int k = 0; k < A.size()-1; ++k) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
       A.at(i).at(k) = alpha;
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
     }
@@ -125,14 +125,14 @@ std::vector<std::vector<double> > Inverse_matrix(const std::vector<std::vector<d
   std::vector<double> y(A.size());
   std::vector<std::vector<double> > A_Inverse(A.size(), std::vector<double>(A.size()));
 
-  for (int i = 0; i < A.size(); i++) {
-    for (int j = 0; j < A.size(); j++) {
+  for (int i = 0; i < A.size(); ++i) {
+    for (int j = 0; j < A.size(); ++j) {
       e.at(j) = 0.0;
     }
     e.at(i) = 1.0;
     y = Forward_sub(A_LU, e);
     x = Backward_sub(A_LU, y);
-    for (int j = 0; j < A.size(); j++) {
+    for (int j = 0; j < A.size(); ++j) {
       A_Inverse.at(j).at(i) = x.at(j);
     }
   }
@@ -145,9 +145,9 @@ std::vector<double> Jacobi_law(const std::vector<std::vector<double> >& A, const
   std::vector<std::vector<double> > x(M, std::vector<double>(A.size(), 1.0));
   double sum;
   for (int m = 1; m < M; m++) {
-    for (int i = 0; i < A.size(); i++) {
+    for (int i = 0; i < A.size(); ++i) {
       sum = 0;
-      for (int j = 0; j < A.at(0).size(); j++) {
+      for (int j = 0; j < A.at(0).size(); ++j) {
         if (j == i) continue;
         /* sum += A.at(i).at(j) * x.at(m-1).at(j) / A.at(i).at(i); */
         sum += A.at(i).at(j) * x.at(m-1).at(j);
@@ -175,13 +175,13 @@ std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A
   double sum1;
   double sum2;
   for (int m = 1; m < M; m++) {
-    for (int i = 0; i < A.size(); i++) {
+    for (int i = 0; i < A.size(); ++i) {
       sum1 = 0;
-      for (int j = 0; j < i; j++) {
+      for (int j = 0; j < i; ++j) {
         sum1 += A.at(i).at(j) * x.at(m).at(j);
       }
       sum2 = 0;
-      for (int j = i+1; j < A.size(); j++) {
+      for (int j = i+1; j < A.size(); ++j) {
         sum2 += A.at(i).at(j) * x.at(m-1).at(j);
       }
       x.at(m).at(i) = (b.at(i) - sum1 - sum2)/A.at(i).at(i);
@@ -197,14 +197,14 @@ std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A
   return x.at(0);
 }
 
-std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b) {
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
-    for (int i = k+1; i < A.size(); i++) {
+  for (int k = 0; k < A.size()-1; ++k) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       b.at(i) = b.at(i) - alpha*b.at(k);
@@ -250,18 +250,19 @@ std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _
   return x1;
 }
 
-std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b) {
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   std::vector<std::vector<double> > A_true(_A);
   std::vector<double> b_true(_b);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
+  int n = A.size();
+  for (int k = 0; k < A.size()-1; ++k) {
 
     /* pivot選択 */
     double max = abs(A.at(k).at(k));
     int index = k;
-    for (int i = k; i < n; i++) {
+    for (int i = k; i < n; ++i) {
       if(max < abs(A.at(i).at(k))){
         max = abs(A.at(i).at(k));
         index = i;
@@ -270,19 +271,19 @@ std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double
     /* int index = std::max_element(A.at(k).at(k), A.at(k).at(k+1)); */
     /* std::vector<double>::iterator index = *std::max_element(A.at(k).at(k), A.at(n-1).at(k)); */
 
-    for (int i = k; i < n; i++) {
+    for (int i = k; i < n; ++i) {
       std::swap(A.at(index).at(i), A.at(k).at(i));
     }
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; ++i) {
       std::swap(A_true.at(index).at(i), A_true.at(k).at(i));
     }
 
     std::swap(b.at(index), b.at(k));
     std::swap(b_true.at(index), b_true.at(k));
 
-    for (int i = k+1; i < A.size(); i++) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       b.at(i) = b.at(i) - alpha*b.at(k);
@@ -304,14 +305,15 @@ std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double
   return x;
 }
 
-double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b) {
   std::vector<std::vector<double> > A(_A);
   std::vector<double> b(_b);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
-    for (int i = k+1; i < A.size(); i++) {
+  std::cout << "no_pivot" << std::endl;
+  for (int k = 0; k < A.size()-1; ++k) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       b.at(i) = b.at(i) - alpha*b.at(k);
@@ -325,36 +327,42 @@ double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const
   return b_Ax;
 }
 
-double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, int n) {
+double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b) {
   std::vector<std::vector<double> > A(_A);
   std::vector<std::vector<double> > A_true(_A);
   std::vector<double> b(_b);
   std::vector<double> b_true(_b);
   double alpha;
-  for (int k = 0; k < A.size()-1; k++) {
+  int n = A.size();
+  int index;
+  double max = A.at(0).at(0);
+  std::cout << "pivot" << std::endl;
+  for (int k = 0; k < A.size()-1; ++k) {
 
     /* pivot選択 */
-    double max = abs(A.at(k).at(k));
-    int index = k;
-    for (int i = k; i < n; i++) {
+    max = abs(A.at(k).at(k));
+    index = k;
+    for (int i = k; i < n; ++i) {
       if(max < abs(A.at(i).at(k))){
         max = abs(A.at(i).at(k));
         index = i;
       }
     }
 
-    for (int i = k; i < n; i++) {
+    for (int i = k; i < n; ++i) {
       std::swap(A.at(index).at(i), A.at(k).at(i));
     }
-    for (int i = 0; i < n; i++) {
-      std::swap(A_true.at(index).at(i), A_true.at(k).at(i));
-    }
+    /* for (int i = 0; i < n; ++i) { */
+    /*   std::swap(A_true.at(index).at(i), A_true.at(k).at(i)); */
+    /* } */
+    /* std::swap(A.at(index), A.at(k)); */
+    std::swap(A_true.at(index), A_true.at(k));
     std::swap(b.at(index), b.at(k));
     std::swap(b_true.at(index), b_true.at(k));
 
-    for (int i = k+1; i < A.size(); i++) {
+    for (int i = k+1; i < A.size(); ++i) {
       alpha = A.at(i).at(k) / A.at(k).at(k);
-      for (int j = k+1; j < A.size(); j++) {
+      for (int j = k+1; j < A.size(); ++j) {
         A.at(i).at(j) = A.at(i).at(j) - alpha*A.at(k).at(j);
       }
       b.at(i) = b.at(i) - alpha*b.at(k);
@@ -372,7 +380,7 @@ std::vector<double> Euler_method(double x_0, double a, double T, int N) {
   x.at(0) = x_0;
   double h = T/N;
   double t = 0;
-  for (int i = 1; i < N; i++) {
+  for (int i = 1; i < N; ++i) {
     t += h;
     x.at(i) = x.at(i-1) + h * a * x.at(i-1);
   }

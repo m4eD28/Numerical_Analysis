@@ -36,7 +36,7 @@ def outlier_iqr(df):
 
 
 df = pd.read_csv("../build/output.csv", header=0, names=['no_pivot', 'pivot'])
-# print(df)
+# print(df.head(5))
 n = len(df['pivot']) + 1
 df = np.log10(df)
 plt.figure(figsize=(11.69, 8.27))

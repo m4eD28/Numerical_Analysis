@@ -15,15 +15,15 @@ int main() {
   std::vector<std::vector<double>> A(n, std::vector<double>(n));
   A = {{1, 2, 1, 2}, {2, 4+pow(10, -10), 2, 3}, {1, 2, 3, 4}, {4, 3, 8, 1}};
   std::vector<double> b(n, 7);
-  printMatrix(A);
-  printVector(b);
-  Gauss_elimination(A, b, n);
+  /* printMatrix(A); */
+  /* printVector(b); */
+  Gauss_elimination(A, b);
   std::printf("-------------------------\n");
-  printMatrix(A);
-  printVector(b);
-  Gauss_elimination_pivot(A, b, n);
-  printMatrix(A);
-  printVector(b);
+  /* printMatrix(A); */
+  /* printVector(b); */
+  Gauss_elimination_pivot(A, b);
+  /* printMatrix(A); */
+  /* printVector(b); */
 
 
 

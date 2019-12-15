@@ -24,13 +24,13 @@ std::vector<double> Jacobi_law(const std::vector<std::vector<double> >& A, const
 
 std::vector<double> Gauss_Seidel_law(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
-std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, const int n);
+std::vector<double> Gauss_elimination(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
-std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, const int n);
+std::vector<double> Gauss_elimination_pivot(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
-double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, const int n);
+double Gauss_elimination_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
-double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b, const int n);
+double Gauss_elimination_pivot_norm(const std::vector<std::vector<double> >& _A, const std::vector<double>& _b);
 
 std::vector<double> Euler_method(double x_0, double a, double T, int N);
 #endif
