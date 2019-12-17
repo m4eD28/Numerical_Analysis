@@ -59,8 +59,8 @@ void Newton_convergence_order(std::vector<double>& initial, std::vector<double>&
     if(error < error_eps ){
       for (int i = k-2; i <= k; ++i) {
         printf("N = %d\n", i+1);
-        printf("近似解 x[n]\n");
-        printVector_more_detail(x.at(i));
+        /* printf("近似解 x[n]\n"); */
+        /* printVector_more_detail(x.at(i)); */
         error = VectorNormInfty(Generate_negative_F(x.at(i)));
         printf("error = %.10e\n", error);
         error_true = VectorNormInfty(VectorSubstract(x.at(i), x_alpha));
@@ -106,7 +106,7 @@ int main(){
     }
   }
   Newton_convergence_order(initial, x_alpha);
-  Newton(initial);
+  /* Newton(initial); */
 
   return 0;
 }
