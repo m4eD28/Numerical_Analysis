@@ -15,7 +15,7 @@ void printVector(const std::vector<double>& a) {
 
 void printVector_more_detail(const std::vector<double>& a) {
   for (int i = 0; i < a.size(); i++) {
-    printf("|%.10e|\n",a[i]);
+    printf("|%.6e|\n",a[i]);
   }
   std::cout << std::endl;
 }
@@ -29,6 +29,20 @@ void printMatrix(const std::vector<std::vector<double> >& A) {
         continue;
       }
       printf("%.2e\t",A.at(i).at(j));
+    }
+  }
+  std::cout << std::endl;
+}
+
+void printMatrix_more_detail(const std::vector<std::vector<double> >& A) {
+  for (int i = 0; i < A.size(); i++) {
+    std::cout << "|";
+    for (int j = 0; j < A[0].size(); j++) {
+      if(j == A[0].size()-1) {
+        printf("%.6e|\n",A.at(i).at(j));
+        continue;
+      }
+      printf("%.6e\t",A.at(i).at(j));
     }
   }
   std::cout << std::endl;
@@ -52,6 +66,32 @@ std::vector<double> VectorSubstract(const std::vector<double>& a, const std::vec
   }
 
   return c;
+}
+
+double VectorToScalar(const std::vector<double>& a, const std::vector<double>& b) {
+  double val = 0;
+  for (int i = 0; i < a.size(); ++i) {
+    val += a.at(i) + b.at(i);
+  }
+  return val;
+}
+
+std::vector<double> VectorScalar(const double a, const std::vector<double>& b) {
+  std::vector<double> vec(b);
+  for (double& elem : vec) {
+    elem = a * elem;
+  }
+  return vec;
+}
+
+std::vector<std::vector<double> > MatrixSclar(const double a, const std::vector<std::vector<double> >& b) {
+  std::vector<std::vector<double> > mat(b);
+  for (std::vector<double>& vec : mat) {
+    for (double& elem : vec) {
+      elem = a * elem;
+    }
+  }
+  return mat;
 }
 
 std::vector<double> MatrixVector(const std::vector<std::vector<double> >& A, const std::vector<double>& b) {

@@ -1,0 +1,201 @@
+\documentclass[12pt,a4paper]{jsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{listings,jlisting}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm}
+\usepackage{here}
+%\usepackage[top=30truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\makeatletter
+\def\tbcaption{\def\@captype{table}\caption}
+\def\figcaption{\def\@captype{figure}\caption}
+\makeatother
+
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}.}
+
+\begin{document}
+
+\begin{titlepage}
+\title{連立Newton法で解く最適化問題}
+\author{理学部応用数学科2年 $$1418104 \\前田 竜太}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+%----------------------連立Newton法について-----------------------
+\section{連立Newton法について}
+連立Newton法とは, 反復法を用いて方程式の数値解を求めるアルゴリズムのNewton法を多次元に拡張したものである. Newton法では, 微分した値を用いて反復式を実行していったが. 連立Newton法では多次元であり, 変数が複数存在するためヤコビ行列を用いて反復式を実行していく.
+
+変数として$\bm{x}$が, 方程式$\bm{f}(\bm{x})=\bm{0}$が与えられた時の反復式は以下である.
+\begin{equation*}
+\begin{aligned}
+  \bm{x}^{(k+1)} &= \bm{x}^{(k)} - (J(\bm{x}^{(k)}))^{-1}\bm{f}(\bm{x}^{(k)}), \qquad k = 0, 1, 2, \cdots \\
+  J(\bm{x}^{(k)})&:ヤコビ行列
+\end{aligned}
+\end{equation*}
+またヤコビ行列が正則である必要がある. これはNewton法における微分した値が0でないと対応する.
+
+%-----------------------------Himmelblau関数について--------------------------
+\section{Himmelblau関数について}
+今回のHimmelblau関数とは. 関数として以下で与えられる.
+\[ f(x, y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2 \]
+また, この関数は,multimodal function であり, 以下の4つの局所的最適解が存在する関数である.
+\begin{equation*}
+\left\{
+\begin{aligned}
+  f(3.0&, 2.0) = 0.0, \\
+    f(-2.805118&, 3.131312) = 0.0, \\
+    f(-3.779310&, -3.283186) = 0.0, \\
+    f(3.584428&, -1.848126) = 0.0 \\
+\end{aligned}
+\right.
+\end{equation*}
+また極大値として以下が求められる.
+\[ f(-0.270845, -0.923039) = 181.617\]
+
+この関数はよく最適化アルゴリズムの検証で使われることが多い.
+multimodal function とは最適化問題に対する局所的最適解が複数存在する関数である.
+また, 局所的最適解とは, ある区間における関数の最適解(最小値を指すことが多い)である.
+全体最適解という対になる言葉もあり, こちらは, 関数が定義されてる区間全てにおける最適解(最小値)を指す.
+なぜ局所的最適解を考えるのかと言うと, 一般に最適化問題を考える際, 数値計算で解を出そうとするが, 計算の際に計算結果が全体最適解に収束せず, 局所解に留まってしまう事が多々ある. その為局所的最適解を考えそこから全体最適解に結びつけるという考え方が一般的である.
+
+%-----------------------Himmelblau関数における連立Newton法--------------------
+\section{Himmelblau関数における連立Newton法}
+Himmelblau関数の最小解を求めていく際, Newton法を用いて数値計算していく. まずは, Himmelblau関数の最小解を出すために勾配ベクトル$\nabla f(\bm{x}) = \bm{o}$になる解を求める. これは1変数関数の場合, 導関数を求めてその値が$0$なる点, すなわち,極値を求めることに対応する. そして, 勾配ベクトルの各要素がそれぞれ$0$になるよう連立方程式を立式する. その連立方程式をNewton法で解く. その際, それぞれの導関数が必要になるがヤコビ行列がその機能を行う.
+
+%-------------------------実験結果-----------------------
+\section{実験結果}
+\subsubsection{問題(1)の勾配ベクトル$\bm{g}(\bm{x})=\nabla f(\bm{x})$とヘッセ行列$\nabla^2f(\bm{x})$を計算せよ.}
+計算結果は以下である.
+\[ \bm{g}(\bm{x}) = -2
+\left( \begin{array}{c}
+  -7 - 21x_1 + 2x_1^3 + 2x_1x_2 + x_2^2 \\
+  -11 + x_1^2 - 13x_2 + 2x_1x_2 + 2x_2^3
+\end{array}
+\right)\]
+
+\[ \nabla^2f(\bm{x}) = 2
+\left( \begin{array}{cc}
+  -21 + 6x_1^2 + 2x_2 & 2(x_1 + x_2) \\
+  2(x_1 + x_2) & -13 + 2x_1 + 6x_2^2
+\end{array}
+\right)\]
+
+\subsubsection{MathematicaのPlot3Dを用いて(1)のグラフを表示せよ.}
+実験結果は以下である.
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7cm]{himmelblau1.pdf}
+  \caption{Himmelblau関数.}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[height=7cm]{himmelblau2.pdf}
+  \caption{Himmelblau関数.}
+\end{figure}
+
+
+\subsubsection{初期点を$\bm{x}^{(0)}=(0, 0)^{\mathrm{T}}, (-3, -3)^{\mathrm{T}}, (-3, 3)^{\mathrm{T}}, (5, 5)^{\mathrm{T}}$として, 問題(1)をNewton法を用いて解く. ただし, 収束判定条件$\|\bm{g}(\bm{x}^{(n)})\|_\infty < 10^{-8}$を用いる. それぞれの初期点に対して, 反復回数$n$, 解$\bm{x}^{(n)}$, 関数値$f(\bm{x}^{(n)})$, 勾配$\bm{g}(\bm{x}^{(n)})$, ヘッセ行列$\nabla^2f(\bm{x}^{(n)})$を答えよ.}
+実験結果は以下である.
+\begin{table}[H]
+  \centering
+\begin{tabular}{cccccc}
+初期点 & 反復回数$n$ & 解$\bm{x}^{(n)}$ & 関数値$f(\bm{x}^{(n)})$ & 勾配$\bm{g}(\bm{x}^{(n)})$\\ \hline
+$(0, 0)^{\mathrm{T}}$   & 5       & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} -2.708446e-01 \\ -9.230386e-01 \end{array}\right)$\end{tabular}    & 1.816165e+02     & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} -1.269236e-10 \\ 1.236852e-09 \end{array} \right)$\end{tabular} \\
+$(-3, -3)^{\mathrm{T}}$ & 6       & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc}-3.779310e+00 \\ -3.283186e+00 \end{array} \right)$\end{tabular} & 3.339546e-22     & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} 2.633165e-10 \\ 1.239187e-11 \end{array} \right)$\end{tabular} \\
+$(-3, 3)^{\mathrm{T}}$  & 5       & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} -2.805118e+00 \\ 3.131313e+00 \end{array} \right)$\end{tabular}  & 7.888609e-31     & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} 7.105427e-15 \\ 1.421085e-14 \end{array} \right)$\end{tabular} \\
+$(5, 5)^{\mathrm{T}}$   & 8       & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} 3.000000e+00 \\ 2.000000e+00 \end{array} \right)$\end{tabular}   & 1.806491e-28     & \begin{tabular}[c]{@{}c@{}}$\left(\begin{array}{cc} -2.131628e-14 \\ -1.065814e-13 \end{array} \right)$\end{tabular}
+\end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+\begin{tabular}{cc}
+初期点 & ヘッセ行列$\nabla^2f(\bm{x}^{(n)})$ \\ \hline
+  $(0, 0)^{\mathrm{T}}$ & $\left(\begin{array}{cc} -4.481187e+01& -4.775533e+00 \\ -4.775533e+00& -1.685938e+01\end{array}\right)$ \\
+  $(-3, -3)^{\mathrm{T}}$ & $\left(\begin{array}{cc} 1.162655e+02& -2.824998e+01\\ -2.824998e+01& 8.823448e+01\end{array}\right)$ \\
+  $(-3, 3)^{\mathrm{T}}$ & $\left(\begin{array}{cc} 6.494950e+01& 1.304778e+00\\1.304778e+00& 8.044094e+01\end{array}\right)$ \\
+  $(5, 5)^{\mathrm{T}}$ & $\left(\begin{array}{cc} 7.400000e+01& 2.000000e+01\\2.000000e+01& 3.400000e+01\end{array}\right)$
+\end{tabular}
+\end{table}
+
+\subsubsection{初期点を$\bm{x}^{(0)}=(-3, 3)^{\mathrm{T}}$として, 問題(1)を準Newton法(BFGS公式)を用いて解く. ただし, 初期行列$H^{(0)}=I$とし, 収束判定条件$\|\bm{g}(\bm{x}^{(n)})\|_\infty < 10^{-8}$を用いる. 反復回数$n$, 解$\bm{x}^{(n)}$, 関数値$f(\bm{x}^{(n)})$, 勾配$\bm{g}(\bm{x}^{(n)})$, ヘッセ行列$\nabla^2f(\bm{x}^{(n)})$を答えよ.}
+実験結果は以下である.
+\begin{table}[H]
+  \centering
+\begin{tabular}{ccccc}
+  反復回数$n$ & 解$\bm{x}^{(n)}$ & 関数値$f(\bm{x}^{(n)})$ & 勾配$\bm{g}(\bm{x}^{(n)})$\\ \hline
+  28 & $\left(\begin{array}{c} -2.805118e+00 \\ 3.131313e+00\end{array}\right)$ & 0.000000e+00 & $\left(\begin{array}{c} -3.340972e-11 \\ -4.409628e-11\end{array}\right)$
+\end{tabular}
+\end{table}
+\begin{table}[H]
+  \centering
+\begin{tabular}{c}
+  ヘッセ行列$\nabla^2f(\bm{x}^{(n)})$ \\ \hline
+  $\left(\begin{array}{cc} 6.494950e+01 & 1.304778e+00 \\1.304778e+00& 8.044094e+01\end{array}\right)$
+\end{tabular}
+\end{table}
+
+
+\subsubsection{$f(\bm{x}^{(n)}), \bm{g}(\bm{x}^{(n)})$の値や, 収束の速さについて考察しよう.}
+初期点が$(0, 0)^{\mathrm{T}}$のとき, 関数値$f(\bm{x}^{(n)}) = 1.816165e+02$となり. この関数の極大値へと収束していることが分かる.
+
+他の3つの初期点では,
+\begin{table}[H]
+  \centering
+\begin{tabular}{cc}
+  初期点 & 関数値$f(\bm{x}^{(n)})$ \\ \hline
+  $(-3, -3)^{\mathrm{T}}$ & $3.339546e-22$ \\
+  $(-3, 3)^{\mathrm{T}}$ & $7.888609e-31$ \\
+  $(5, 5)^{\mathrm{T}}$ & $1.806491e-28$
+\end{tabular}
+\end{table}
+のとき, それぞれ関数値が$\mathcal{O}(10^{-16})$より小さい値となっており, PCの誤差を考慮して, $0$に等しいと言えるので最小解へと収束していると分かる.
+またそれぞれの勾配ベクトルのノルム$\|\bm{g}(\bm{x}^{(n)})\|_\infty < 10^{-8}$でありほぼ$0$であることからこの点は極値であることがわかる.
+ここで初期点$(-3, 3)^{\mathrm{T}}$に対して, 真の解を$(-2.805118, 3.131312)^{\mathrm{T}}$として, 収束次数を求めると$1.00e+00$となり1次収束であることがわかる.
+
+% \subsubsection{拡張Himmelblau関数$$f(\bm{x})=\sum_{i=1}^{d/2}((x_{2i-1}^2+x_{2i}-11)^2+(x_{2i-1}+x_{2i}^2-7)^2)$$を最小にする$\bm{x}=(x_1,\cdots,x_d)^{\mathrm{T}}$をNewton法で求める. 次元数$d$や初期点は自分で設定する.}
+
+
+%-----------------------考察---------------------
+\section{考察}
+Newton法の性質上極値を見つけたら処理を終了するため, このような局所解を複数持つ問題に対しては, 初期点をうまく指定する必要がある. 今回の実験から分かるように, 連立Newton法は初期点の付近にある停留点に収束することが分かる. そしてこの点におけるヘッセ行列が正定値行列であれば極小値である. $2*2$のヘッセ行列の各成分をそれぞれ$H_{11}, H_{12}, H_{21}, H_{22}$とし, $H_{11} > 0, H_{22} > 0, H_{11}H_{22} - H_{12}^2 > 0$を判定条件として, Himmelblau関数のそれぞれの極小値と思われる点ではヘッセ行列が正定値行列であるので極小値である. よって最小値であることが分かる. 初期点$(0, 0)^{\mathrm{T}}$に対しては, ヘッセ行列が負定値行列となり極大値になることが分かる. また準Newton法(BFGS)と比べると, 準Newton法では, 反復回数が$n=28$で連立Newton法よりもより1回の更新における学習率が低いと考察される. そのため, より小さな学習率で計算されるため, 関数値が$f(\bm{x}^{(n)}) = 0$となりよりよい精度として解が出されている.
+
+
+%----------------------感想--------------------------
+\section{感想}
+Newton法の収束次数は理論的には2次収束するはずであるが1次収束になってしまったので, 収束次数の計算方法が違うのかもしれない.
+BFGS公式を実装する際に, 今までのベクトルの演算などだと各計算ごとにVectorAddなどを記述しなくてはならなく. 型を一緒にしなくてはいけないため記述が増えると感じ, 関数テンプレートと演算子オーバーロードで記述し直したため時間がかかった.
+勾配ベクトルの最適化問題は機械学習でもよく使われていて, 有名所としてSGDなどがあり, 数値解析が機械学習の最適化アルゴリズムに深く関わっていて, 理論を支えているのでさらにいろいろなアルゴリズムを調べていき様々な範囲へと応用していきたい.
+
+%---------------------参考文献----------------------
+\section{参考文献}
+\begin{itemize}
+\item 講義資料
+\item 陳 商君 『英語で学ぶ 数値解析 Numerical Analysis』
+\item 塩浦 昭義 『数理計画法(数理最適化)第12回 非線形計画』
+\item 山本 昌志 『非線型方程式の数値計算法』
+\item 皆本 晃弥 『C言語による数値計算入門』
+\item 丸善出版 『数学I\hspace{-.1em}I』
+\end{itemize}
+
+\end{document}

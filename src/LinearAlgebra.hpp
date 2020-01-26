@@ -14,9 +14,17 @@ void printVector_more_detail(const std::vector<double>& a);
 
 void printMatrix(const std::vector<std::vector<double> >& A);
 
+void printMatrix_more_detail(const std::vector<std::vector<double> >& A);
+
 std::vector<double> VectorAdd(const std::vector<double>& a, const std::vector<double>& b);
 
 std::vector<double> VectorSubstract(const std::vector<double>& a, const std::vector<double>& b);
+
+double VectorToScalar(const std::vector<double>& a, const std::vector<double>& b);
+
+std::vector<double> VectorScalar(const double a, const std::vector<double>& b);
+
+std::vector<std::vector<double> > MatrixSclar(const double a, const std::vector<std::vector<double> >& b);
 
 std::vector<double> MatrixVector(const std::vector<std::vector<double> >& A, const std::vector<double>& b);
 
